@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cancer Regulatory RNA Atlas</title>
+<meta name="description" content="An evidence-based resource for exploring noncoding RNA regulation in human cancer.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1>Cancer Regulatory RNA Atlas</h1>
+    <p class="subtitle">An evidence-based resource for exploring noncoding RNA regulation in human cancer.</p>
+    <p class="disclaimer">Independent project &middot; v0.1 prototype &middot; No institutional affiliation or endorsement &middot; Not medical information</p>
+  </div>
+</header>
+
+<nav class="tabs">
+  <ul role="tablist">
+    <li><button role="tab" data-panel="home" aria-selected="true">Home</button></li>
+    <li><button role="tab" data-panel="rnas" aria-selected="false">RNA Explorer</button></li>
+    <li><button role="tab" data-panel="interactions" aria-selected="false">Interaction Explorer</button></li>
+    <li><button role="tab" data-panel="publications" aria-selected="false">Publications</button></li>
+    <li><button role="tab" data-panel="methodology" aria-selected="false">Methodology</button></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- ============================ HOME ============================ -->
+<section class="panel" id="panel-home">
+  <h2>About this atlas</h2>
+  <p class="lede">
+    Research on regulatory noncoding RNAs in cancer is scattered across databases that each cover
+    one RNA class and each use their own notion of evidence. This atlas organizes published
+    findings under a single evidence framework, so the strength of support for every record is
+    visible and comparable.
+  </p>
+
+  <h3>Database contents</h3>
+  <div class="stats" id="home-stats"></div>
+  <p class="result-count" id="home-generated"></p>
+
+  <h3>Evidence framework</h3>
+  <div class="ev-key">
+    <div><span class="ev ev-direct">Direct experimental</span>
+      Physical or direct interaction tested — reporter assay with site mutation, pulldown, RIP, CLIP.</div>
+    <div><span class="ev ev-functional">Experimental functional</span>
+      RNA perturbed and target or phenotype changed, without direct-binding evidence recorded.</div>
+    <div><span class="ev ev-computational">Computational prediction</span>
+      Inferred by algorithm, sequence complementarity or statistical association only.</div>
+    <div><span class="ev ev-literature">Literature association</span>
+      Expression, prognostic or genomic correlation reported, with no causal test.</div>
+  </div>
+
+  <h3>RNA classes covered</h3>
+  <div class="stats" id="home-categories"></div>
+
+  <div class="notice caution">
+    <p><strong>Read this before using the numbers above.</strong></p>
+    <p>Counts reflect how much has been curated, not how common anything is in biology. The records
+      were chosen because they are well documented and traceable, which biases them toward highly
+      cited work and well studied cancer types. An RNA absent from this atlas is not evidence that
+      it is unstudied.</p>
+    <p>Evidence classes in v0.1 were assigned from PubMed abstracts rather than full texts. Where an
+      abstract asserts a target without naming the assay, the weaker class is recorded — so some
+      records understate the evidence that exists in the paper.</p>
+  </div>
+
+  <div class="notice">
+    <p><strong>This atlas contains no original discoveries.</strong> Every record restates something
+      already published and links back to its source. The only contribution is organization and
+      explicit evidence labelling.</p>
+  </div>
+
+  <h3>Questions it is built to help answer</h3>
+  <ul class="plain">
+    <li>Which regulatory RNAs are associated with which cancer types?</li>
+    <li>Which genes do they regulate, and by what reported mechanism?</li>
+    <li>Which relationships have direct experimental support, and which rest on prediction or correlation?</li>
+    <li>Which relationships recur across more than one cancer type?</li>
+    <li>Where is the evidence thin — which RNA classes and cancer types are under-covered?</li>
+  </ul>
+</section>
+
+<!-- ======================== RNA EXPLORER ======================== -->
+<section class="panel" id="panel-rnas" hidden>
+  <h2>RNA Explorer</h2>
+  <p class="lede">Curated regulatory noncoding RNA records. Every identifier was resolved against
+    NCBI Gene during curation; none were entered from memory.</p>
+
+  <div class="controls">
+    <div class="field grow">
+      <label for="rna-q">Search name, alias or identifier</label>
+      <input type="search" id="rna-q" placeholder="e.g. HOTAIR, MIR21, NCBIGene:378938" autocomplete="off">
+    </div>
+    <div class="field">
+      <label for="rna-cat">RNA class</label>
+      <select id="rna-cat"><option value="">All classes</option></select>
+    </div>
+    <div class="field">
+      <label for="rna-id-state">Identifier</label>
+      <select id="rna-id-state">
+        <option value="">Any</option>
+        <option value="has">Has stable identifier</option>
+        <option value="none">No identifier available</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="rna-sort">Sort</label>
+      <select id="rna-sort">
+        <option value="name">Name (A&ndash;Z)</option>
+        <option value="category">RNA class</option>
+      </select>
+    </div>
+    <button class="reset" data-reset="rnas">Reset</button>
+  </div>
+
+  <p class="result-count" id="rna-count"></p>
+  <div id="rna-results"></div>
+</section>
+
+<!-- ==================== INTERACTION EXPLORER ==================== -->
+<section class="panel" id="panel-interactions" hidden>
+  <h2>Interaction Explorer</h2>
+  <p class="lede">RNA&ndash;target relationships, each carrying one evidence class and a resolvable
+    source citation.</p>
+
+  <div class="controls">
+    <div class="field grow">
+      <label for="int-q">Search RNA, target or method</label>
+      <input type="search" id="int-q" placeholder="e.g. PTEN, sponging, reporter assay" autocomplete="off">
+    </div>
+    <div class="field">
+      <label for="int-ev">Evidence class</label>
+      <select id="int-ev"><option value="">All classes</option></select>
+    </div>
+    <div class="field">
+      <label for="int-cancer">Cancer type</label>
+      <select id="int-cancer"><option value="">All cancer types</option></select>
+    </div>
+    <div class="field">
+      <label for="int-type">Interaction type</label>
+      <select id="int-type"><option value="">All types</option></select>
+    </div>
+    <button class="reset" data-reset="interactions">Reset</button>
+  </div>
+
+  <p class="result-count" id="int-count"></p>
+  <div id="int-results"></div>
+
+  <h3>Cancer associations</h3>
+  <p>RNA&ndash;cancer associations without a specific gene target — expression differences,
+    prognostic associations and genomic alterations.</p>
+  <p class="result-count" id="assoc-count"></p>
+  <div id="assoc-results"></div>
+</section>
+
+<!-- ======================== PUBLICATIONS ======================== -->
+<section class="panel" id="panel-publications" hidden>
+  <h2>Publications</h2>
+  <p class="lede">Supporting literature. All metadata was verified against PubMed during curation.
+    Papers flagged in PubMed as retracted were excluded; errata and published comments are kept and
+    flagged so a reader can follow them.</p>
+
+  <div class="controls">
+    <div class="field grow">
+      <label for="pub-q">Search title, author or journal</label>
+      <input type="search" id="pub-q" placeholder="e.g. Calin, Nature, enhancer RNA" autocomplete="off">
+    </div>
+    <div class="field">
+      <label for="pub-year-min">Year from</label>
+      <input type="number" id="pub-year-min" min="1900" max="2100" placeholder="1999">
+    </div>
+    <div class="field">
+      <label for="pub-year-max">Year to</label>
+      <input type="number" id="pub-year-max" min="1900" max="2100" placeholder="2026">
+    </div>
+    <div class="field">
+      <label for="pub-sort">Sort</label>
+      <select id="pub-sort">
+        <option value="year-desc">Year (newest first)</option>
+        <option value="year-asc">Year (oldest first)</option>
+        <option value="journal">Journal (A&ndash;Z)</option>
+      </select>
+    </div>
+    <button class="reset" data-reset="publications">Reset</button>
+  </div>
+
+  <p class="result-count" id="pub-count"></p>
+  <div id="pub-results"></div>
+</section>
+
+<!-- ======================== METHODOLOGY ======================== -->
+<section class="panel" id="panel-methodology" hidden>
+  <h2>Methodology, sources and limitations</h2>
+  <p class="lede">The full documents live in the repository under <code>documentation/</code>. This is
+    a summary of how records were made and what they can and cannot support.</p>
+
+  <h3>How records were curated</h3>
+  <p>Records were curated by hand from two official sources: <a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed</a>
+    via the <a href="https://www.ncbi.nlm.nih.gov/books/NBK25501/">NCBI E-utilities</a> for publication
+    metadata and abstracts, and <a href="https://www.ncbi.nlm.nih.gov/gene/">NCBI Gene</a> for stable
+    identifiers. Nothing was entered from memory. Where a candidate identifier did not resolve to
+    the expected paper, the candidate was discarded rather than corrected by guesswork; the
+    discarded candidates are recorded in the repository.</p>
+
+  <h3>Evidence classification rules</h3>
+  <dl class="defs">
+    <dt><span class="ev ev-direct">Direct experimental</span></dt>
+    <dd>The publication reports a physical or direct interaction test — a reporter assay with
+      binding-site mutation, RNA pulldown, RIP, CLIP or equivalent.</dd>
+    <dt><span class="ev ev-functional">Experimental functional</span></dt>
+    <dd>The RNA was perturbed experimentally and the target or phenotype changed, but no
+      direct-binding evidence is recorded in the source consulted.</dd>
+    <dt><span class="ev ev-computational">Computational prediction</span></dt>
+    <dd>Inferred by algorithm, sequence complementarity or statistical association only. Never
+      recorded as experimentally validated.</dd>
+    <dt><span class="ev ev-literature">Literature association</span></dt>
+    <dd>Expression correlation, clinical or prognostic association, or genomic alteration, with no
+      causal test.</dd>
+  </dl>
+  <p>The class reflects what the consulted source actually states. Where a source asserts a target
+    relationship without naming the assay, the weaker class is recorded and the ambiguity noted on
+    the record.</p>
+
+  <h3>Missing information</h3>
+  <p>An empty field means nothing was recorded. It never means the source tested and found no
+    effect. This atlas holds no negative results, because the literature largely does not publish
+    them.</p>
+
+  <h3>Retraction screening</h3>
+  <p>Parts of the noncoding-RNA literature, particularly lncRNA sponge papers from roughly
+    2016&ndash;2020, have been affected by retractions and paper-mill output. Every candidate was
+    checked for PubMed publication-type flags. Papers flagged as retracted were excluded. This
+    used PubMed flags only; Retraction Watch has not yet been checked, and PubMed flags can lag a
+    publisher's notice.</p>
+
+  <h3>Known limitations</h3>
+  <ul class="plain">
+    <li><strong>Provisional evidence classes.</strong> v0.1 classes come from abstracts, not full texts.</li>
+    <li><strong>Small, non-random sample.</strong> Counts measure curation effort, not biological frequency.</li>
+    <li><strong>Thin enhancer RNA coverage.</strong> No curated database catalogues eRNA&ndash;target
+      interactions the way miRTarBase does for miRNAs, so eRNA records come from individual papers
+      and several eRNAs have no stable identifier anywhere. This is a gap in the field.</li>
+    <li><strong>miRNA over-representation.</strong> miRNA databases are the most accessible, which
+      pulls any atlas toward miRNAs unless it is corrected for deliberately.</li>
+    <li><strong>Correlation is not causation.</strong> A literature association says nothing about
+      mechanism or direction of causation.</li>
+    <li><strong>No inferred mechanism.</strong> Interactions are not chained into pathways that no
+      source states.</li>
+    <li><strong>Not clinical information.</strong> This is a literature index for research purposes.</li>
+  </ul>
+
+  <h3>Source status</h3>
+  <p>Resources reached during curation and used for records: PubMed / E-utilities, NCBI Gene, and
+    Europe PMC (partially, before it began rate limiting). Resources named in the project plan but
+    not yet accessed: miRTarBase, ENCORI / starBase, RNAcentral, LncBook, LncRNADisease and GEO.
+    Their licence terms must be read before any record is imported from them.</p>
+</section>
+
+</main>
+
+<footer>
+  <div class="inner">
+    <p><strong>Cancer Regulatory RNA Atlas</strong> &mdash; an independent project. No institutional
+      affiliation, sponsorship or scientific endorsement is claimed or implied.</p>
+    <p>A curated index of published literature. It contains no original discoveries, and nothing in
+      it is medical advice, diagnostic information or guidance on treatment.</p>
+    <p>Publication metadata from PubMed; gene identifiers from NCBI Gene. Both are works of the
+      US Government and not subject to copyright. Abstract text remains under publisher copyright,
+      so this atlas stores paraphrases only.</p>
+  </div>
+</footer>
+
+<script src="data/data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

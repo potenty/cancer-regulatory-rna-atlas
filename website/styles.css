@@ -1,0 +1,377 @@
+/* Cancer Regulatory RNA Atlas — biomedical research aesthetic:
+   white ground, deep navy structure, blue accents, generous measure. */
+
+:root {
+  --navy: #16365c;
+  --navy-deep: #0e2440;
+  --blue: #1b63b5;
+  --blue-light: #e8f0fa;
+  --rule: #dfe5ec;
+  --ink: #1c2530;
+  --ink-soft: #5a6878;
+  --bg-tint: #f7f9fc;
+
+  /* Evidence classes, strongest to weakest. */
+  --ev-direct-bg: #e3f3ec;    --ev-direct-fg: #15604a;   --ev-direct-br: #9ecfba;
+  --ev-func-bg: #e8f0fa;      --ev-func-fg: #1b4f8f;     --ev-func-br: #a5c4e8;
+  --ev-comp-bg: #fdf3e0;      --ev-comp-fg: #7d5410;     --ev-comp-br: #e5c58a;
+  --ev-lit-bg: #f1f3f6;       --ev-lit-fg: #4e5a68;      --ev-lit-br: #c8d0da;
+
+  --sans: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  --serif: Georgia, "Times New Roman", Times, serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- masthead ---------- */
+
+.masthead {
+  background: var(--navy);
+  color: #fff;
+  border-bottom: 4px solid var(--blue);
+}
+
+.masthead-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.6rem 1.5rem 1.4rem;
+}
+
+.masthead h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.75rem;
+  font-weight: normal;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.masthead .subtitle {
+  margin: 0.45rem 0 0;
+  font-size: 0.95rem;
+  color: #c3d4e8;
+  font-style: italic;
+  max-width: 62ch;
+}
+
+.masthead .disclaimer {
+  margin: 0.7rem 0 0;
+  font-size: 0.76rem;
+  color: #9fb6d1;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- navigation ---------- */
+
+nav.tabs {
+  background: var(--navy-deep);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+nav.tabs ul {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem;
+}
+
+nav.tabs button {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: #b8cae0;
+  font-family: inherit;
+  font-size: 0.86rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.1rem;
+  cursor: pointer;
+  transition: color 0.12s, border-color 0.12s, background 0.12s;
+}
+
+nav.tabs button:hover { color: #fff; background: rgba(255, 255, 255, 0.05); }
+nav.tabs button[aria-selected="true"] { color: #fff; border-bottom-color: var(--blue); }
+nav.tabs button:focus-visible { outline: 2px solid #8fb8e8; outline-offset: -2px; }
+
+/* ---------- layout ---------- */
+
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 2.2rem 1.5rem 4rem;
+}
+
+.panel[hidden] { display: none; }
+
+h2 {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: var(--navy);
+  margin: 0 0 0.3rem;
+}
+
+h3 {
+  font-size: 1rem;
+  color: var(--navy);
+  margin: 2rem 0 0.6rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.lede {
+  font-size: 1.04rem;
+  color: var(--ink-soft);
+  max-width: 72ch;
+  margin: 0 0 1.8rem;
+}
+
+p { max-width: 76ch; }
+
+a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--navy); }
+
+/* ---------- statistics ---------- */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 0 0 2rem;
+}
+
+.stat {
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--blue);
+  padding: 1.1rem 1rem;
+  background: var(--bg-tint);
+}
+
+.stat .n {
+  font-family: var(--serif);
+  font-size: 2rem;
+  color: var(--navy);
+  line-height: 1.1;
+  display: block;
+}
+
+.stat .label {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 0.3rem;
+  display: block;
+}
+
+/* ---------- evidence badges ---------- */
+
+.ev {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.5rem;
+  border-radius: 2px;
+  border: 1px solid;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.ev-direct { background: var(--ev-direct-bg); color: var(--ev-direct-fg); border-color: var(--ev-direct-br); }
+.ev-functional { background: var(--ev-func-bg); color: var(--ev-func-fg); border-color: var(--ev-func-br); }
+.ev-computational { background: var(--ev-comp-bg); color: var(--ev-comp-fg); border-color: var(--ev-comp-br); }
+.ev-literature { background: var(--ev-lit-bg); color: var(--ev-lit-fg); border-color: var(--ev-lit-br); }
+.ev-unknown { background: #fdecec; color: #8c2a2a; border-color: #e5a9a9; }
+
+.ev-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  padding: 1rem 1.1rem;
+  background: var(--bg-tint);
+  border: 1px solid var(--rule);
+  margin: 0 0 1.6rem;
+}
+
+.ev-key div { font-size: 0.82rem; color: var(--ink-soft); max-width: 24ch; }
+.ev-key .ev { margin-bottom: 0.35rem; }
+
+/* ---------- controls ---------- */
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  align-items: flex-end;
+  padding: 1.1rem;
+  border: 1px solid var(--rule);
+  background: var(--bg-tint);
+  margin: 0 0 1.2rem;
+}
+
+.field { display: flex; flex-direction: column; gap: 0.3rem; }
+.field.grow { flex: 1 1 260px; }
+
+.field label {
+  font-size: 0.72rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.field input,
+.field select {
+  font-family: inherit;
+  font-size: 0.92rem;
+  color: var(--ink);
+  padding: 0.5rem 0.6rem;
+  border: 1px solid #c3ccd8;
+  border-radius: 2px;
+  background: #fff;
+  min-width: 150px;
+}
+
+.field input:focus,
+.field select:focus { outline: 2px solid var(--blue); outline-offset: -1px; border-color: var(--blue); }
+
+button.reset {
+  font-family: inherit;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--navy);
+  background: #fff;
+  color: var(--navy);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+button.reset:hover { background: var(--navy); color: #fff; }
+
+.result-count {
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+  margin: 0 0 0.7rem;
+}
+
+.result-count strong { color: var(--navy); }
+
+/* ---------- tables ---------- */
+
+.table-wrap { overflow-x: auto; border: 1px solid var(--rule); }
+
+table { border-collapse: collapse; width: 100%; font-size: 0.89rem; }
+
+thead th {
+  background: var(--navy);
+  color: #fff;
+  text-align: left;
+  font-size: 0.72rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.65rem 0.75rem;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+}
+
+tbody td {
+  padding: 0.6rem 0.75rem;
+  border-top: 1px solid var(--rule);
+  vertical-align: top;
+}
+
+tbody tr:nth-child(even) { background: #fafbfd; }
+tbody tr:hover { background: var(--blue-light); }
+
+td.name { font-weight: 600; color: var(--navy); white-space: nowrap; }
+td.title { min-width: 320px; }
+td.note { color: var(--ink-soft); font-size: 0.83rem; min-width: 200px; }
+td.num { white-space: nowrap; }
+
+.cat {
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border: 1px solid var(--rule);
+  background: #fff;
+  padding: 0.15rem 0.45rem;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.empty-cell { color: #a8b2bf; }
+
+.empty-state {
+  padding: 2.2rem 1.4rem;
+  text-align: center;
+  color: var(--ink-soft);
+  background: var(--bg-tint);
+  border: 1px dashed var(--rule);
+}
+
+.empty-state strong { display: block; color: var(--navy); margin-bottom: 0.4rem; font-size: 1rem; }
+
+/* ---------- notices ---------- */
+
+.notice {
+  border-left: 4px solid var(--blue);
+  background: var(--blue-light);
+  padding: 0.9rem 1.1rem;
+  margin: 1.4rem 0;
+  font-size: 0.9rem;
+}
+
+.notice.caution { border-left-color: #c9962f; background: #fdf7ea; }
+.notice p { margin: 0.35rem 0; max-width: 80ch; }
+.notice p:first-child { margin-top: 0; }
+.notice p:last-child { margin-bottom: 0; }
+.notice strong { color: var(--navy); }
+
+dl.defs { margin: 0; }
+dl.defs dt { font-weight: 600; color: var(--navy); margin-top: 1rem; font-size: 0.95rem; }
+dl.defs dd { margin: 0.25rem 0 0; color: var(--ink-soft); max-width: 78ch; }
+
+ul.plain { max-width: 78ch; padding-left: 1.2rem; }
+ul.plain li { margin: 0.4rem 0; }
+
+footer {
+  border-top: 1px solid var(--rule);
+  background: var(--bg-tint);
+  padding: 1.6rem 1.5rem;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+footer .inner { max-width: 1180px; margin: 0 auto; }
+footer p { margin: 0.3rem 0; max-width: 84ch; }
+
+@media (max-width: 640px) {
+  .masthead h1 { font-size: 1.3rem; }
+  main { padding: 1.5rem 1rem 3rem; }
+  .controls { padding: 0.9rem; }
+  .field input, .field select { min-width: 0; width: 100%; }
+  .field.grow { flex-basis: 100%; }
+  thead th { position: static; }
+}
