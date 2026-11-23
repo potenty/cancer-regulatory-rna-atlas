@@ -183,3 +183,43 @@ The source notes for the remaining rows are intact in
 
 **Current counts:** 57 RNA records · 8 interactions · 0 cancer associations · 49 publications.
 QC: 0 errors. Workbook: 0 formula errors. Website: no console errors.
+
+
+---
+
+## Session 3 — 2026-11-23
+
+**Added**
+- `website/network.js` — RNA/target network as an interactive force-directed graph, a new
+  Network tab on the site. Self-contained (no external libraries), so it still runs from the
+  filesystem.
+  - Node colour = RNA class, on a palette validated for lightness band, chroma floor,
+    colour-vision separation and contrast. Node shape distinguishes RNA from target, so
+    identity never rests on colour alone. Node size = degree.
+  - Line weight = evidence class. Colour is deliberately *not* used for evidence: 88 of 94
+    rows share one class, so a hue encoding would be a single flat colour.
+  - Hover or click a node to isolate its neighbourhood; the side panel lists every
+    interaction with its evidence class, cancer type and a live PubMed link.
+  - Filters for evidence class, cancer type and RNA class.
+- `scripts/backfill_publications.py` — fills `cancer_types`, `rna_categories` and
+  `pubmed_flags` in `publications.csv`. The first two are **derived** from the curated
+  interaction rows rather than re-read from the papers, so no new claim is introduced;
+  `main_finding` is deliberately left empty because it cannot be derived.
+  Filled: 30 cancer_types, 38 rna_categories, 5 erratum flags.
+
+**Fixed**
+- Force-layout instability: without a minimum-distance floor, two nodes seeded close together
+  produced an enormous repulsion and the whole graph collapsed onto the boundary. Added a
+  distance floor, a per-step speed cap, and a deterministic ring seed so layouts are
+  reproducible.
+
+**Current counts:** 58 RNA records · 94 interactions from 38 publications · 0 cancer
+associations · 49 publications. QC 0 errors; workbook 0 formula errors; site no console errors.
+
+**Still open**
+1. `cancer_associations.tsv` is empty — the 7 expression-only papers plus association-level
+   findings in papers that already have interaction rows.
+2. `main_finding` empty for all 49 publications.
+3. 88 of 94 evidence classes remain provisional pending full-text review.
+4. Six of nine planned databases unvisited; licence terms unread.
+5. 11 checklist papers still have no rows (see verification report addendum).

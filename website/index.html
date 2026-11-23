@@ -22,6 +22,7 @@
     <li><button role="tab" data-panel="home" aria-selected="true">Home</button></li>
     <li><button role="tab" data-panel="rnas" aria-selected="false">RNA Explorer</button></li>
     <li><button role="tab" data-panel="interactions" aria-selected="false">Interaction Explorer</button></li>
+    <li><button role="tab" data-panel="network" aria-selected="false">Network</button></li>
     <li><button role="tab" data-panel="publications" aria-selected="false">Publications</button></li>
     <li><button role="tab" data-panel="methodology" aria-selected="false">Methodology</button></li>
   </ul>
@@ -158,6 +159,51 @@
   <div id="assoc-results"></div>
 </section>
 
+<!-- ========================== NETWORK ========================== -->
+<section class="panel" id="panel-network" hidden>
+  <h2>Regulatory network</h2>
+  <p class="lede">Every curated RNA&ndash;target relationship as one graph. Circles are regulatory
+    RNAs, coloured by class; squares are target genes. Node size reflects how many interactions
+    a node has, so hubs and convergent targets stand out.</p>
+
+  <div class="controls">
+    <div class="field">
+      <label for="net-ev">Evidence class</label>
+      <select id="net-ev"><option value="">All classes</option></select>
+    </div>
+    <div class="field">
+      <label for="net-cancer">Cancer type</label>
+      <select id="net-cancer"><option value="">All cancer types</option></select>
+    </div>
+    <div class="field">
+      <label for="net-class">RNA class</label>
+      <select id="net-class"><option value="">All RNA classes</option></select>
+    </div>
+    <button class="reset" id="net-reset">Reset</button>
+  </div>
+
+  <p class="result-count" id="net-count"></p>
+  <div class="net-legend" id="net-legend"></div>
+
+  <div class="net-wrap">
+    <svg id="net-svg" viewBox="0 0 900 560" role="img"
+         aria-label="Force-directed graph of curated RNA-target interactions"></svg>
+    <aside class="net-detail" id="net-detail"></aside>
+  </div>
+
+  <div class="notice caution">
+    <p><strong>Line weight is evidence, and most lines are thin.</strong> Only a handful of
+      interactions carry direct experimental support; the rest were classed from abstracts that
+      assert a target without naming an assay. A dense-looking neighbourhood is not a
+      well-evidenced one &mdash; hover any node and read the classes.</p>
+    <p>The graph shows curated rows, not biology. An RNA with one edge here may have many in the
+      literature; it simply has not been curated yet.</p>
+  </div>
+
+  <p>A table of the same records, with methods and citations, is in the
+    <a href="#interactions" data-goto="interactions">Interaction Explorer</a>.</p>
+</section>
+
 <!-- ======================== PUBLICATIONS ======================== -->
 <section class="panel" id="panel-publications" hidden>
   <h2>Publications</h2>
@@ -276,6 +322,7 @@
 </footer>
 
 <script src="data/data.js"></script>
+<script src="network.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

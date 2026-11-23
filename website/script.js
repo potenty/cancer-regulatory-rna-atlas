@@ -127,10 +127,23 @@
       history.replaceState(null, "", "#" + name);
     }
     window.scrollTo({ top: 0, behavior: "auto" });
+    // The network lays out on first view, not on load, so an unseen tab costs nothing.
+    if (name === "network" && !show._net && window.CRRA_initNetwork) {
+      show._net = true;
+      window.CRRA_initNetwork();
+    }
   }
 
   tabs.forEach(function (t) {
     t.addEventListener("click", function () { show(t.getAttribute("data-panel")); });
+  });
+
+  // In-page links that jump to another tab.
+  document.addEventListener("click", function (ev) {
+    var a = ev.target.closest && ev.target.closest("[data-goto]");
+    if (!a) return;
+    ev.preventDefault();
+    show(a.getAttribute("data-goto"));
   });
 
   // ---------- home ----------
