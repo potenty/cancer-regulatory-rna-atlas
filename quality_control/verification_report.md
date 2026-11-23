@@ -292,9 +292,15 @@ a distribution that has been quietly corrected, and no reader could tell which r
 dropped. Selection decisions must be recorded here, where they can be disagreed with — not
 applied silently to improve a summary statistic.
 
-**Status: open.** If these papers are re-read and still judged phenotype-marker findings rather
-than cancer associations, the exclusion stands on that ground alone. Until then they are
-candidates, not settled exclusions.
+**Status: resolved 2026-11-23 — include.** On review the curator judged that miR-200 loss
+reported in invasive breast cancer lines, metaplastic breast specimens and primary ovarian
+specimens is a cancer association, and both papers should be represented in the association
+table. The rows are therefore **outstanding work**, not exclusions.
+
+Expect roughly 11 rows (six miR-200-family members plus miR-205 for Gregory, five for Park,
+under the family-expansion convention). They will add to the miR-200 concentration already
+disclosed in `limitations.md`; that is the correct outcome. The alternative — withholding
+qualifying records to flatten a distribution — would have made the disclosure false.
 
 ## Line endings
 

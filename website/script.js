@@ -42,6 +42,15 @@
     return s ? esc(s) : '<span class="empty-cell" title="Not recorded">&mdash;</span>';
   }
 
+  /* Prose cells (method, notes, authors) are clamped to a few lines so the table
+     keeps a predictable width; the full text stays available on hover and to
+     anyone copying the row. */
+  function longCell(v) {
+    var s = (v == null ? "" : String(v)).trim();
+    if (!s) return '<span class="empty-cell" title="Not recorded">&mdash;</span>';
+    return '<span class="clamp" title="' + esc(s) + '">' + esc(s) + "</span>";
+  }
+
   function badge(cls) {
     var s = (cls || "").trim();
     if (!s) return '<span class="ev ev-unknown" title="No evidence class recorded">Unclassified</span>';
@@ -136,6 +145,32 @@
       '/" target="_blank" rel="noopener">' + esc(p) + "</a>";
   }
 
+
+  /* Pagination. 94 rows in one scroll made the Interaction Explorer 15,000px tall,
+     and the last column was clipped off the right edge. Pages keep both in check. */
+  var PAGE = 25;
+  var pageAt = { rnas: 1, interactions: 1, associations: 1, publications: 1 };
+
+  function paginate(key, rows) {
+    var pages = Math.max(1, Math.ceil(rows.length / PAGE));
+    if (pageAt[key] > pages) pageAt[key] = pages;
+    var start = (pageAt[key] - 1) * PAGE;
+    return { slice: rows.slice(start, start + PAGE), start: start, pages: pages, total: rows.length };
+  }
+
+  function pagerHtml(key, p) {
+    if (p.total <= PAGE) return "";
+    var from = p.start + 1, to = Math.min(p.start + PAGE, p.total);
+    return '<div class="pager">' +
+      '<button type="button" data-page="' + key + '" data-dir="-1"' +
+        (pageAt[key] <= 1 ? " disabled" : "") + ">&larr; Previous</button>" +
+      '<span class="pager-pos">' + from + "&ndash;" + to + " of " + p.total +
+        '<span class="pager-page"> &middot; page ' + pageAt[key] + " of " + p.pages + "</span></span>" +
+      '<button type="button" data-page="' + key + '" data-dir="1"' +
+        (pageAt[key] >= p.pages ? " disabled" : "") + ">Next &rarr;</button>" +
+      "</div>";
+  }
+
   // ---------- tabs ----------
 
   var tabs = Array.prototype.slice.call(document.querySelectorAll('nav.tabs button[role="tab"]'));
@@ -160,6 +195,21 @@
 
   tabs.forEach(function (t) {
     t.addEventListener("click", function () { show(t.getAttribute("data-panel")); });
+  });
+
+  // Pager buttons.
+  document.addEventListener("click", function (ev) {
+    var btn = ev.target.closest && ev.target.closest("button[data-page]");
+    if (!btn || btn.disabled) return;
+    var key = btn.getAttribute("data-page");
+    pageAt[key] += parseInt(btn.getAttribute("data-dir"), 10);
+    if (pageAt[key] < 1) pageAt[key] = 1;
+    if (key === "rnas") renderRnas();
+    else if (key === "interactions") renderInteractions();
+    else if (key === "associations") renderAssociations();
+    else renderPublications();
+    var panel = btn.closest(".panel");
+    if (panel) panel.scrollIntoView({ block: "start", behavior: "smooth" });
   });
 
   // In-page links that jump to another tab.
@@ -269,7 +319,8 @@
       return;
     }
 
-    var body = rows.map(function (r) {
+    var pg = paginate("rnas", rows);
+    var body = pg.slice.map(function (r) {
       var idCell = (r.stable_identifier || "").trim();
       var link = (r.source_url || "").trim();
       var idHtml;
@@ -286,12 +337,13 @@
         "<td>" + cell(r.alternative_names) + "</td>" +
         '<td class="num">' + idHtml + "</td>" +
         "<td>" + cell(r.organism) + "</td>" +
-        '<td class="note">' + cell(r.notes) + "</td>" +
+        '<td class="note">' + longCell(r.notes) + "</td>" +
         "</tr>";
     }).join("");
 
     el("rna-results").innerHTML = table(
-      ["Name", "Class", "Aliases", "Identifier", "Organism", "Notes"], body);
+      ["Name", "Class", "Aliases", "Identifier", "Organism", "Notes"], body) +
+      pagerHtml("rnas", pg);
   }
 
   // ---------- interaction explorer ----------
@@ -337,7 +389,8 @@
       return;
     }
 
-    var body = rows.map(function (r) {
+    var pg = paginate("interactions", rows);
+    var body = pg.slice.map(function (r) {
       var target = (r.target_name || "").trim();
       var gid = (r.target_gene_id || "").trim();
       var targetHtml = esc(target || "—");
@@ -352,16 +405,16 @@
         "<td>" + cell(r.cancer_type) + "</td>" +
         "<td>" + cell(r.interaction_type) + "</td>" +
         "<td>" + cell(r.regulatory_effect) + "</td>" +
-        "<td>" + badge(r.evidence_class) + "</td>" +
-        '<td class="note">' + cell(r.experimental_method) + "</td>" +
+        '<td class="ev-cell">' + badge(r.evidence_class) + "</td>" +
+        '<td class="note">' + longCell(r.experimental_method) + "</td>" +
         '<td class="num">' + pubmedLink(r.supporting_pmid) + "</td>" +
-        '<td class="note">' + cell(r.notes) + "</td>" +
+        '<td class="note">' + longCell(r.notes) + "</td>" +
         "</tr>";
     }).join("");
 
     el("int-results").innerHTML = table(
       ["RNA", "Target", "Cancer type", "Interaction", "Effect", "Evidence",
-       "Method", "PMID", "Notes"], body);
+       "Method", "PMID", "Notes"], body) + pagerHtml("interactions", pg);
   }
 
   function renderAssociations() {
@@ -378,21 +431,22 @@
       return (a.rna_name || "").localeCompare(b.rna_name || "");
     });
 
-    var body = rows.map(function (r) {
+    var pg = paginate("associations", rows);
+    var body = pg.slice.map(function (r) {
       return "<tr>" +
         '<td class="name">' + cell(r.rna_name) + "</td>" +
         "<td>" + cell(r.cancer_type) + "</td>" +
         "<td>" + cell(r.direction) + "</td>" +
         "<td>" + cell(r.clinical_association) + "</td>" +
-        "<td>" + badge(r.evidence_class) + "</td>" +
-        '<td class="note">' + cell(r.cohort_description) + "</td>" +
+        '<td class="ev-cell">' + badge(r.evidence_class) + "</td>" +
+        '<td class="note">' + longCell(r.cohort_description) + "</td>" +
         '<td class="num">' + pubmedLink(r.supporting_pmid) + "</td>" +
         "</tr>";
     }).join("");
 
     el("assoc-results").innerHTML = table(
       ["RNA", "Cancer type", "Direction", "Clinical association", "Evidence",
-       "Cohort", "PMID"], body);
+       "Cohort", "PMID"], body) + pagerHtml("associations", pg);
   }
 
   // ---------- publications ----------
@@ -439,7 +493,8 @@
       return;
     }
 
-    var body = rows.map(function (r) {
+    var pg = paginate("publications", rows);
+    var body = pg.slice.map(function (r) {
       var url = (r.publication_url || "").trim();
       var title = esc(r.title || "(untitled)");
       var titleHtml = url
@@ -453,17 +508,18 @@
       return "<tr>" +
         '<td class="title">' + titleHtml +
           (flags ? '<br><span class="cat">' + esc(flags) + "</span>" : "") + "</td>" +
-        '<td class="note">' + cell(r.authors) + "</td>" +
+        '<td class="note">' + longCell(r.authors) + "</td>" +
         "<td>" + cell(r.journal) + "</td>" +
         '<td class="num">' + cell(r.year) + "</td>" +
         '<td class="num">' + pubmedLink(r.pmid) + "</td>" +
         '<td class="note">' + doiHtml + "</td>" +
-        '<td class="note">' + cell(r.main_finding) + "</td>" +
+        '<td class="note">' + longCell(r.main_finding) + "</td>" +
         "</tr>";
     }).join("");
 
     el("pub-results").innerHTML = table(
-      ["Title", "Authors", "Journal", "Year", "PMID", "DOI", "Main finding"], body);
+      ["Title", "Authors", "Journal", "Year", "PMID", "DOI", "Main finding"], body) +
+      pagerHtml("publications", pg);
   }
 
   // ---------- wiring ----------
@@ -476,12 +532,13 @@
     };
   }
 
-  function bind(ids, handler) {
+  function bind(ids, handler, key) {
     ids.forEach(function (id) {
       var node = el(id);
       if (!node) return;
+      var wrapped = function () { if (key) pageAt[key] = 1; handler(); };
       var ev = (node.tagName === "SELECT") ? "change" : "input";
-      node.addEventListener(ev, ev === "input" ? debounce(handler, 120) : handler);
+      node.addEventListener(ev, ev === "input" ? debounce(wrapped, 120) : wrapped);
     });
   }
 
@@ -495,9 +552,9 @@
     fillSelect(el("int-cancer"), uniqueGroups(interactions), true);
     fillSelect(el("int-type"), uniqueSorted(interactions, "interaction_type"), true);
 
-    bind(["rna-q", "rna-cat", "rna-id-state", "rna-sort"], renderRnas);
-    bind(["int-q", "int-ev", "int-cancer", "int-type"], renderInteractions);
-    bind(["pub-q", "pub-year-min", "pub-year-max", "pub-sort"], renderPublications);
+    bind(["rna-q", "rna-cat", "rna-id-state", "rna-sort"], renderRnas, "rnas");
+    bind(["int-q", "int-ev", "int-cancer", "int-type"], renderInteractions, "interactions");
+    bind(["pub-q", "pub-year-min", "pub-year-max", "pub-sort"], renderPublications, "publications");
 
     Array.prototype.forEach.call(document.querySelectorAll("button.reset"), function (b) {
       b.addEventListener("click", function () {
@@ -505,6 +562,7 @@
         if (!panel) return;
         Array.prototype.forEach.call(panel.querySelectorAll("input"), function (i) { i.value = ""; });
         Array.prototype.forEach.call(panel.querySelectorAll("select"), function (s) { s.selectedIndex = 0; });
+        Object.keys(pageAt).forEach(function (k) { pageAt[k] = 1; });
         renderRnas();
         renderInteractions();
         renderPublications();

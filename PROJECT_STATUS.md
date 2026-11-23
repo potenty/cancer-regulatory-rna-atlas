@@ -250,3 +250,26 @@ QC 0 errors; workbook 0 formula errors; site no console errors.
 
 **Next:** `main_finding` is still empty for all 49 publications, and 88 interaction evidence
 classes remain provisional pending full-text review.
+
+
+### Session 3c — vocabulary, pagination, layout
+
+**Cancer-type vocabulary.** Added `cancer_group`, derived by `scripts/cancer_vocab.py`, fixing
+two filter defects: subtypes splitting their parent (`Lung cancer` / `Non-small cell lung
+cancer` were separate values for 5 and 7 rows) and compound cells being unreachable (filtering
+`Bladder carcinoma` matched zero rows despite two existing). `cancer_type` is never rewritten.
+
+**Pagination.** The Interaction Explorer was a single 15,154px scroll. Tables now page at 25
+rows; page height is ~5,000px. Filters reset to page 1.
+
+**Table layout.** Fixed-layout tables with proportional widths; prose cells clamp to three lines
+with full text on hover. Fixed three defects found by measuring every cell for overflow:
+evidence badges spilling into the Method column, `white-space: nowrap` on name cells defeating
+the wrap rules, and the Publications Title column squeezed to 161px by its fixed-width
+neighbours. All four tables now report zero overflowing cells.
+
+**Gregory/Park resolved — include.** Both papers are to be represented in the association table;
+roughly 11 rows outstanding. See the verification report.
+
+**Still open:** those 11 rows · `main_finding` empty for all 49 publications · 88 provisional
+evidence classes · six databases unvisited · Retraction Watch unchecked.
