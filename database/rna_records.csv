@@ -1,51 +1,58 @@
 rna_id,official_name,rna_category,alternative_names,stable_identifier,identifier_source,organism,source_database,source_url,notes
 CRRA-RNA-0001,CCAT1,lncRNA,,NCBIGene:100507056,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/100507056,
-CRRA-RNA-0002,CDKN2B-AS1,lncRNA,,NCBIGene:100048912,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/100048912,Widely published under the name ANRIL.
-CRRA-RNA-0003,CDR1-AS,circRNA,,NCBIGene:103611090,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/103611090,Published as ciRS-7 / CDR1as.
-CRRA-RNA-0004,FALEC,lncRNA,,NCBIGene:100874054,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/100874054,Published as FAL1 (PMID 25203321).
-CRRA-RNA-0005,GAS5,snoRNA host gene,,NCBIGene:60674,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/60674,
-CRRA-RNA-0006,H19,lncRNA,,NCBIGene:283120,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/283120,
-CRRA-RNA-0007,HOTAIR,lncRNA,,NCBIGene:100124700,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/100124700,
-CRRA-RNA-0008,HULC,lncRNA,,NCBIGene:728655,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/728655,
-CRRA-RNA-0009,MALAT1,lncRNA,,NCBIGene:378938,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/378938,
-CRRA-RNA-0010,MEG3,lncRNA,,NCBIGene:55384,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/55384,
-CRRA-RNA-0011,MIR106A,miRNA,,NCBIGene:406899,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406899,
-CRRA-RNA-0012,MIR10B,miRNA,,NCBIGene:406903,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406903,
-CRRA-RNA-0013,MIR124-1,miRNA,,NCBIGene:406907,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406907,
-CRRA-RNA-0014,MIR126,miRNA,,NCBIGene:406913,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406913,
-CRRA-RNA-0015,MIR141,miRNA,,NCBIGene:406933,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406933,
-CRRA-RNA-0016,MIR145,miRNA,,NCBIGene:406937,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406937,
-CRRA-RNA-0017,MIR155,miRNA,,NCBIGene:406947,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406947,
-CRRA-RNA-0018,MIR15A,miRNA,,NCBIGene:406948,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406948,
-CRRA-RNA-0019,MIR16-1,miRNA,,NCBIGene:406950,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406950,
-CRRA-RNA-0020,MIR17,miRNA,,NCBIGene:406952,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406952,
-CRRA-RNA-0021,MIR17HG,miRNA,,NCBIGene:407975,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/407975,
-CRRA-RNA-0022,MIR200A,miRNA,,NCBIGene:406983,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406983,
-CRRA-RNA-0023,MIR200B,miRNA,,NCBIGene:406984,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406984,
-CRRA-RNA-0024,MIR200C,miRNA,,NCBIGene:406985,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406985,
-CRRA-RNA-0025,MIR205,miRNA,,NCBIGene:406988,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406988,
-CRRA-RNA-0026,MIR20A,miRNA,,NCBIGene:406982,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406982,
-CRRA-RNA-0027,MIR21,miRNA,,NCBIGene:406991,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406991,
-CRRA-RNA-0028,MIR221,miRNA,,NCBIGene:407006,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/407006,
-CRRA-RNA-0029,MIR222,miRNA,,NCBIGene:407007,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/407007,
-CRRA-RNA-0030,MIR29A,miRNA,,NCBIGene:407021,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/407021,
-CRRA-RNA-0031,MIR29B1,miRNA,,NCBIGene:407024,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/407024,
-CRRA-RNA-0032,MIR29C,miRNA,,NCBIGene:407026,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/407026,
-CRRA-RNA-0033,MIR335,miRNA,,NCBIGene:442904,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/442904,
-CRRA-RNA-0034,MIR34A,miRNA,,NCBIGene:407040,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/407040,
-CRRA-RNA-0035,MIR34B,miRNA,,NCBIGene:407041,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/407041,
-CRRA-RNA-0036,MIR34C,miRNA,,NCBIGene:407042,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/407042,
-CRRA-RNA-0037,MIR373,miRNA,,NCBIGene:442918,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/442918,
-CRRA-RNA-0038,MIR429,miRNA,,NCBIGene:554210,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/554210,
-CRRA-RNA-0039,MIR520C,miRNA,,NCBIGene:574476,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/574476,
-CRRA-RNA-0040,MIR7-1,miRNA,,NCBIGene:407043,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/407043,
-CRRA-RNA-0041,MIR9-3,miRNA,,NCBIGene:407051,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/407051,
-CRRA-RNA-0042,MIRLET7A1,miRNA,,NCBIGene:406881,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406881,
-CRRA-RNA-0043,NEAT1,lncRNA,,NCBIGene:283131,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/283131,
-CRRA-RNA-0044,PCA3,lncRNA,,NCBIGene:50652,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/50652,Originally reported as DD3 (PMID 10606244).
-CRRA-RNA-0045,PCAT1,lncRNA,,NCBIGene:100750225,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/100750225,
-CRRA-RNA-0046,PTENP1,pseudogene transcript,,NCBIGene:11191,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/11191,
-CRRA-RNA-0047,PVT1,lncRNA,,NCBIGene:5820,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/5820,
-CRRA-RNA-0048,SCHLAP1,lncRNA,,NCBIGene:101669767,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/101669767,
-CRRA-RNA-0049,SMIM10L2A,lncRNA,,NCBIGene:399668,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/399668,Studied as the lncRNA 'LED' (PMID 25813522); NCBI Gene lists it as SMIM10L2A with LED and LINC00086 as aliases.
-CRRA-RNA-0050,TMZR1,eRNA,,NCBIGene:141566930,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/141566930,"Enhancer RNA at the STAT3 locus, published as TMZR1-eRNA (PMID 39889913). One of the few eRNAs with an NCBI Gene record."
+CRRA-RNA-0002,CCND1e,eRNA,,,,Homo sapiens,Primary literature,https://pubmed.ncbi.nlm.nih.gov/,Enhancer RNA at the CCND1 locus (PMID 39950845). No gene record.
+CRRA-RNA-0003,CDKN2B-AS1,lncRNA,,NCBIGene:100048912,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/100048912,Widely published under the name ANRIL.
+CRRA-RNA-0004,CDR1-AS,circRNA,,NCBIGene:103611090,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/103611090,Published as ciRS-7 / CDR1as.
+CRRA-RNA-0005,FALEC,lncRNA,,NCBIGene:100874054,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/100874054,Published as FAL1 (PMID 25203321).
+CRRA-RNA-0006,GAS5,snoRNA host gene,,NCBIGene:60674,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/60674,
+CRRA-RNA-0007,H19,lncRNA,,NCBIGene:283120,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/283120,
+CRRA-RNA-0008,HOTAIR,lncRNA,,NCBIGene:100124700,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/100124700,
+CRRA-RNA-0009,HULC,lncRNA,,NCBIGene:728655,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/728655,
+CRRA-RNA-0010,IKBKE-e,eRNA,,,,Homo sapiens,Primary literature,https://pubmed.ncbi.nlm.nih.gov/,Enhancer RNA at the IKBKE locus (PMID 41542764). No gene record.
+CRRA-RNA-0011,KLK3e,eRNA,,,,Homo sapiens,Primary literature,https://pubmed.ncbi.nlm.nih.gov/,Enhancer RNA at the KLK3 upstream enhancer (PMID 24778216). No gene record.
+CRRA-RNA-0012,MALAT1,lncRNA,,NCBIGene:378938,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/378938,
+CRRA-RNA-0013,MEG3,lncRNA,,NCBIGene:55384,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/55384,
+CRRA-RNA-0014,MIR106A,miRNA,,NCBIGene:406899,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406899,
+CRRA-RNA-0015,MIR10B,miRNA,,NCBIGene:406903,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406903,
+CRRA-RNA-0016,MIR124-1,miRNA,,NCBIGene:406907,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406907,
+CRRA-RNA-0017,MIR126,miRNA,,NCBIGene:406913,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406913,
+CRRA-RNA-0018,MIR141,miRNA,,NCBIGene:406933,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406933,
+CRRA-RNA-0019,MIR145,miRNA,,NCBIGene:406937,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406937,
+CRRA-RNA-0020,MIR155,miRNA,,NCBIGene:406947,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406947,
+CRRA-RNA-0021,MIR15A,miRNA,,NCBIGene:406948,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406948,
+CRRA-RNA-0022,MIR16-1,miRNA,,NCBIGene:406950,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406950,
+CRRA-RNA-0023,MIR17,miRNA,,NCBIGene:406952,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406952,
+CRRA-RNA-0024,MIR17HG,miRNA,,NCBIGene:407975,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/407975,
+CRRA-RNA-0025,MIR200A,miRNA,,NCBIGene:406983,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406983,
+CRRA-RNA-0026,MIR200B,miRNA,,NCBIGene:406984,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406984,
+CRRA-RNA-0027,MIR200C,miRNA,,NCBIGene:406985,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406985,
+CRRA-RNA-0028,MIR205,miRNA,,NCBIGene:406988,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406988,
+CRRA-RNA-0029,MIR20A,miRNA,,NCBIGene:406982,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406982,
+CRRA-RNA-0030,MIR21,miRNA,,NCBIGene:406991,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406991,
+CRRA-RNA-0031,MIR221,miRNA,,NCBIGene:407006,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/407006,
+CRRA-RNA-0032,MIR222,miRNA,,NCBIGene:407007,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/407007,
+CRRA-RNA-0033,MIR29A,miRNA,,NCBIGene:407021,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/407021,
+CRRA-RNA-0034,MIR29B1,miRNA,,NCBIGene:407024,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/407024,
+CRRA-RNA-0035,MIR29C,miRNA,,NCBIGene:407026,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/407026,
+CRRA-RNA-0036,MIR335,miRNA,,NCBIGene:442904,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/442904,
+CRRA-RNA-0037,MIR34A,miRNA,,NCBIGene:407040,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/407040,
+CRRA-RNA-0038,MIR34B,miRNA,,NCBIGene:407041,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/407041,
+CRRA-RNA-0039,MIR34C,miRNA,,NCBIGene:407042,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/407042,
+CRRA-RNA-0040,MIR373,miRNA,,NCBIGene:442918,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/442918,
+CRRA-RNA-0041,MIR429,miRNA,,NCBIGene:554210,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/554210,
+CRRA-RNA-0042,MIR520C,miRNA,,NCBIGene:574476,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/574476,
+CRRA-RNA-0043,MIR7-1,miRNA,,NCBIGene:407043,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/407043,
+CRRA-RNA-0044,MIR9-3,miRNA,,NCBIGene:407051,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/407051,
+CRRA-RNA-0045,MIRLET7A1,miRNA,,NCBIGene:406881,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/406881,
+CRRA-RNA-0046,MYC-eRNA,eRNA,,,,Homo sapiens,Primary literature,https://pubmed.ncbi.nlm.nih.gov/,Enhancer RNA at the MYC locus (PMID 40216980). No gene record.
+CRRA-RNA-0047,NEAT1,lncRNA,,NCBIGene:283131,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/283131,
+CRRA-RNA-0048,PCA3,lncRNA,,NCBIGene:50652,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/50652,Originally reported as DD3 (PMID 10606244).
+CRRA-RNA-0049,PCAT1,lncRNA,,NCBIGene:100750225,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/100750225,
+CRRA-RNA-0050,PTENP1,pseudogene transcript,,NCBIGene:11191,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/11191,
+CRRA-RNA-0051,PVT1,lncRNA,,NCBIGene:5820,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/5820,
+CRRA-RNA-0052,SCHLAP1,lncRNA,,NCBIGene:101669767,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/101669767,
+CRRA-RNA-0053,SMIM10L2A,lncRNA,,NCBIGene:399668,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/399668,Studied as the lncRNA 'LED' (PMID 25813522); NCBI Gene lists it as SMIM10L2A with LED and LINC00086 as aliases.
+CRRA-RNA-0054,SNAI1e,eRNA,,,,Homo sapiens,Primary literature,https://pubmed.ncbi.nlm.nih.gov/,Also called SCREEM2 (PMID 40133308). No gene record.
+CRRA-RNA-0055,SNAPC1e,eRNA,,,,Homo sapiens,Primary literature,https://pubmed.ncbi.nlm.nih.gov/,Enhancer RNA at the SNAPC1 locus (PMID 39950845). No gene record.
+CRRA-RNA-0056,TMZR1,eRNA,,NCBIGene:141566930,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/141566930,"Enhancer RNA at the STAT3 locus, published as TMZR1-eRNA (PMID 39889913). One of the few eRNAs with an NCBI Gene record."
+CRRA-RNA-0057,lncRNA-ATB,lncRNA,,,,Homo sapiens,Primary literature,https://pubmed.ncbi.nlm.nih.gov/,No NCBI Gene record; published as lncRNA-ATB (PMID 24768205).

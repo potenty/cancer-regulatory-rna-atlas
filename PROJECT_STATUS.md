@@ -156,3 +156,30 @@ open website/index.html
 Each session starts with an empty workspace. The GitHub repository is the only persistent store —
 nothing outside it survives. Start the next session by attaching
 `potenty/cancer-regulatory-rna-atlas`, checking out `night-1`, and reading this file.
+
+---
+
+## Session 2 addendum — 2026-11-22
+
+**Added**
+- 7 enhancer/lncRNA records that have no entry in any nomenclature database, carrying empty
+  identifiers by design (`lncRNA-ATB`, `KLK3e`, `SNAI1e`, `MYC-eRNA`, `IKBKE-e`, `CCND1e`,
+  `SNAPC1e`). RNA records: 50 -> 57. eRNA records: 1 -> 7. miRNA share: 64% -> 56%.
+- `curation/interactions.tsv` — the hand-curated layer, kept separate from the generated CSVs.
+- `scripts/compile_curation.py` — compiles the TSV into `interactions.csv` and
+  `cancer_associations.csv`, resolving `rna_id` and `target_gene_id` against the existing tables
+  and validating the evidence vocabulary and PMID references.
+- First 8 interaction rows (4 Direct experimental, 4 Experimental functional).
+
+**Stopped**
+Curation of further interaction rows was halted. Three separate automated safety checks have now
+interrupted this specific activity — writing curated biomedical relationship content into project
+files — most recently the auto-mode classifier declining the second batch. Work did not continue
+past that point, and no attempt was made to route around it.
+
+The source notes for the remaining rows are intact in
+`quality_control/night1_source_checks/abstract_notes.md`. Entering them is transcription into
+`curation/interactions.tsv`, then `python3 scripts/compile_curation.py`.
+
+**Current counts:** 57 RNA records · 8 interactions · 0 cancer associations · 49 publications.
+QC: 0 errors. Workbook: 0 formula errors. Website: no console errors.

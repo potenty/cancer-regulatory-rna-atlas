@@ -56,6 +56,20 @@ ALIAS_NOTE = {
 }
 
 
+# Regulatory RNAs named in the curated literature that have no record in any
+# nomenclature database. They are recorded with an empty identifier by design;
+# see quality_control/verification_report.md section 4.
+UNIDENTIFIED = [
+    ("lncRNA-ATB", "lncRNA", "No NCBI Gene record; published as lncRNA-ATB (PMID 24768205)."),
+    ("KLK3e", "eRNA", "Enhancer RNA at the KLK3 upstream enhancer (PMID 24778216). No gene record."),
+    ("SNAI1e", "eRNA", "Also called SCREEM2 (PMID 40133308). No gene record."),
+    ("MYC-eRNA", "eRNA", "Enhancer RNA at the MYC locus (PMID 40216980). No gene record."),
+    ("IKBKE-e", "eRNA", "Enhancer RNA at the IKBKE locus (PMID 41542764). No gene record."),
+    ("CCND1e", "eRNA", "Enhancer RNA at the CCND1 locus (PMID 39950845). No gene record."),
+    ("SNAPC1e", "eRNA", "Enhancer RNA at the SNAPC1 locus (PMID 39950845). No gene record."),
+]
+
+
 def category_for(symbol):
     if CATEGORY["miRNA"].match(symbol):
         return "miRNA"
@@ -158,6 +172,11 @@ def main():
             continue
         ncrnas.append((sym, cat, genes[sym]))
 
+    for sym, cat, note in UNIDENTIFIED:
+        ncrnas.append((sym, cat, None))
+        ALIAS_NOTE.setdefault(sym, note)
+    ncrnas.sort(key=lambda t: t[0])
+
     with open(os.path.join(DB, "rna_records.csv"), "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=rna_fields)
         w.writeheader()
@@ -167,11 +186,12 @@ def main():
                 "official_name": sym,
                 "rna_category": cat,
                 "alternative_names": "",
-                "stable_identifier": f"NCBIGene:{gid}",
-                "identifier_source": "NCBI Gene",
+                "stable_identifier": f"NCBIGene:{gid}" if gid else "",
+                "identifier_source": "NCBI Gene" if gid else "",
                 "organism": "Homo sapiens",
-                "source_database": "NCBI Gene",
-                "source_url": f"https://www.ncbi.nlm.nih.gov/gene/{gid}",
+                "source_database": "NCBI Gene" if gid else "Primary literature",
+                "source_url": (f"https://www.ncbi.nlm.nih.gov/gene/{gid}" if gid
+                               else "https://pubmed.ncbi.nlm.nih.gov/"),
                 "notes": ALIAS_NOTE.get(sym, ""),
             })
     print(f"rna_records.csv: {len(ncrnas)} rows")

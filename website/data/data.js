@@ -15,6 +15,18 @@ window.CRRA_DATA = {
   },
   {
    "rna_id": "CRRA-RNA-0002",
+   "official_name": "CCND1e",
+   "rna_category": "eRNA",
+   "alternative_names": "",
+   "stable_identifier": "",
+   "identifier_source": "",
+   "organism": "Homo sapiens",
+   "source_database": "Primary literature",
+   "source_url": "https://pubmed.ncbi.nlm.nih.gov/",
+   "notes": "Enhancer RNA at the CCND1 locus (PMID 39950845). No gene record."
+  },
+  {
+   "rna_id": "CRRA-RNA-0003",
    "official_name": "CDKN2B-AS1",
    "rna_category": "lncRNA",
    "alternative_names": "",
@@ -26,7 +38,7 @@ window.CRRA_DATA = {
    "notes": "Widely published under the name ANRIL."
   },
   {
-   "rna_id": "CRRA-RNA-0003",
+   "rna_id": "CRRA-RNA-0004",
    "official_name": "CDR1-AS",
    "rna_category": "circRNA",
    "alternative_names": "",
@@ -38,7 +50,7 @@ window.CRRA_DATA = {
    "notes": "Published as ciRS-7 / CDR1as."
   },
   {
-   "rna_id": "CRRA-RNA-0004",
+   "rna_id": "CRRA-RNA-0005",
    "official_name": "FALEC",
    "rna_category": "lncRNA",
    "alternative_names": "",
@@ -50,7 +62,7 @@ window.CRRA_DATA = {
    "notes": "Published as FAL1 (PMID 25203321)."
   },
   {
-   "rna_id": "CRRA-RNA-0005",
+   "rna_id": "CRRA-RNA-0006",
    "official_name": "GAS5",
    "rna_category": "snoRNA host gene",
    "alternative_names": "",
@@ -62,7 +74,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0006",
+   "rna_id": "CRRA-RNA-0007",
    "official_name": "H19",
    "rna_category": "lncRNA",
    "alternative_names": "",
@@ -74,7 +86,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0007",
+   "rna_id": "CRRA-RNA-0008",
    "official_name": "HOTAIR",
    "rna_category": "lncRNA",
    "alternative_names": "",
@@ -86,7 +98,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0008",
+   "rna_id": "CRRA-RNA-0009",
    "official_name": "HULC",
    "rna_category": "lncRNA",
    "alternative_names": "",
@@ -98,7 +110,31 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0009",
+   "rna_id": "CRRA-RNA-0010",
+   "official_name": "IKBKE-e",
+   "rna_category": "eRNA",
+   "alternative_names": "",
+   "stable_identifier": "",
+   "identifier_source": "",
+   "organism": "Homo sapiens",
+   "source_database": "Primary literature",
+   "source_url": "https://pubmed.ncbi.nlm.nih.gov/",
+   "notes": "Enhancer RNA at the IKBKE locus (PMID 41542764). No gene record."
+  },
+  {
+   "rna_id": "CRRA-RNA-0011",
+   "official_name": "KLK3e",
+   "rna_category": "eRNA",
+   "alternative_names": "",
+   "stable_identifier": "",
+   "identifier_source": "",
+   "organism": "Homo sapiens",
+   "source_database": "Primary literature",
+   "source_url": "https://pubmed.ncbi.nlm.nih.gov/",
+   "notes": "Enhancer RNA at the KLK3 upstream enhancer (PMID 24778216). No gene record."
+  },
+  {
+   "rna_id": "CRRA-RNA-0012",
    "official_name": "MALAT1",
    "rna_category": "lncRNA",
    "alternative_names": "",
@@ -110,7 +146,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0010",
+   "rna_id": "CRRA-RNA-0013",
    "official_name": "MEG3",
    "rna_category": "lncRNA",
    "alternative_names": "",
@@ -122,7 +158,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0011",
+   "rna_id": "CRRA-RNA-0014",
    "official_name": "MIR106A",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -134,7 +170,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0012",
+   "rna_id": "CRRA-RNA-0015",
    "official_name": "MIR10B",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -146,7 +182,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0013",
+   "rna_id": "CRRA-RNA-0016",
    "official_name": "MIR124-1",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -158,7 +194,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0014",
+   "rna_id": "CRRA-RNA-0017",
    "official_name": "MIR126",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -170,7 +206,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0015",
+   "rna_id": "CRRA-RNA-0018",
    "official_name": "MIR141",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -182,7 +218,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0016",
+   "rna_id": "CRRA-RNA-0019",
    "official_name": "MIR145",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -194,7 +230,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0017",
+   "rna_id": "CRRA-RNA-0020",
    "official_name": "MIR155",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -206,7 +242,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0018",
+   "rna_id": "CRRA-RNA-0021",
    "official_name": "MIR15A",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -218,7 +254,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0019",
+   "rna_id": "CRRA-RNA-0022",
    "official_name": "MIR16-1",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -230,7 +266,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0020",
+   "rna_id": "CRRA-RNA-0023",
    "official_name": "MIR17",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -242,7 +278,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0021",
+   "rna_id": "CRRA-RNA-0024",
    "official_name": "MIR17HG",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -254,7 +290,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0022",
+   "rna_id": "CRRA-RNA-0025",
    "official_name": "MIR200A",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -266,7 +302,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0023",
+   "rna_id": "CRRA-RNA-0026",
    "official_name": "MIR200B",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -278,7 +314,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0024",
+   "rna_id": "CRRA-RNA-0027",
    "official_name": "MIR200C",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -290,7 +326,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0025",
+   "rna_id": "CRRA-RNA-0028",
    "official_name": "MIR205",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -302,7 +338,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0026",
+   "rna_id": "CRRA-RNA-0029",
    "official_name": "MIR20A",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -314,7 +350,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0027",
+   "rna_id": "CRRA-RNA-0030",
    "official_name": "MIR21",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -326,7 +362,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0028",
+   "rna_id": "CRRA-RNA-0031",
    "official_name": "MIR221",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -338,7 +374,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0029",
+   "rna_id": "CRRA-RNA-0032",
    "official_name": "MIR222",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -350,7 +386,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0030",
+   "rna_id": "CRRA-RNA-0033",
    "official_name": "MIR29A",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -362,7 +398,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0031",
+   "rna_id": "CRRA-RNA-0034",
    "official_name": "MIR29B1",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -374,7 +410,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0032",
+   "rna_id": "CRRA-RNA-0035",
    "official_name": "MIR29C",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -386,7 +422,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0033",
+   "rna_id": "CRRA-RNA-0036",
    "official_name": "MIR335",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -398,7 +434,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0034",
+   "rna_id": "CRRA-RNA-0037",
    "official_name": "MIR34A",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -410,7 +446,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0035",
+   "rna_id": "CRRA-RNA-0038",
    "official_name": "MIR34B",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -422,7 +458,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0036",
+   "rna_id": "CRRA-RNA-0039",
    "official_name": "MIR34C",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -434,7 +470,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0037",
+   "rna_id": "CRRA-RNA-0040",
    "official_name": "MIR373",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -446,7 +482,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0038",
+   "rna_id": "CRRA-RNA-0041",
    "official_name": "MIR429",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -458,7 +494,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0039",
+   "rna_id": "CRRA-RNA-0042",
    "official_name": "MIR520C",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -470,7 +506,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0040",
+   "rna_id": "CRRA-RNA-0043",
    "official_name": "MIR7-1",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -482,7 +518,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0041",
+   "rna_id": "CRRA-RNA-0044",
    "official_name": "MIR9-3",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -494,7 +530,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0042",
+   "rna_id": "CRRA-RNA-0045",
    "official_name": "MIRLET7A1",
    "rna_category": "miRNA",
    "alternative_names": "",
@@ -506,7 +542,19 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0043",
+   "rna_id": "CRRA-RNA-0046",
+   "official_name": "MYC-eRNA",
+   "rna_category": "eRNA",
+   "alternative_names": "",
+   "stable_identifier": "",
+   "identifier_source": "",
+   "organism": "Homo sapiens",
+   "source_database": "Primary literature",
+   "source_url": "https://pubmed.ncbi.nlm.nih.gov/",
+   "notes": "Enhancer RNA at the MYC locus (PMID 40216980). No gene record."
+  },
+  {
+   "rna_id": "CRRA-RNA-0047",
    "official_name": "NEAT1",
    "rna_category": "lncRNA",
    "alternative_names": "",
@@ -518,7 +566,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0044",
+   "rna_id": "CRRA-RNA-0048",
    "official_name": "PCA3",
    "rna_category": "lncRNA",
    "alternative_names": "",
@@ -530,7 +578,7 @@ window.CRRA_DATA = {
    "notes": "Originally reported as DD3 (PMID 10606244)."
   },
   {
-   "rna_id": "CRRA-RNA-0045",
+   "rna_id": "CRRA-RNA-0049",
    "official_name": "PCAT1",
    "rna_category": "lncRNA",
    "alternative_names": "",
@@ -542,7 +590,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0046",
+   "rna_id": "CRRA-RNA-0050",
    "official_name": "PTENP1",
    "rna_category": "pseudogene transcript",
    "alternative_names": "",
@@ -554,7 +602,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0047",
+   "rna_id": "CRRA-RNA-0051",
    "official_name": "PVT1",
    "rna_category": "lncRNA",
    "alternative_names": "",
@@ -566,7 +614,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0048",
+   "rna_id": "CRRA-RNA-0052",
    "official_name": "SCHLAP1",
    "rna_category": "lncRNA",
    "alternative_names": "",
@@ -578,7 +626,7 @@ window.CRRA_DATA = {
    "notes": ""
   },
   {
-   "rna_id": "CRRA-RNA-0049",
+   "rna_id": "CRRA-RNA-0053",
    "official_name": "SMIM10L2A",
    "rna_category": "lncRNA",
    "alternative_names": "",
@@ -590,7 +638,31 @@ window.CRRA_DATA = {
    "notes": "Studied as the lncRNA 'LED' (PMID 25813522); NCBI Gene lists it as SMIM10L2A with LED and LINC00086 as aliases."
   },
   {
-   "rna_id": "CRRA-RNA-0050",
+   "rna_id": "CRRA-RNA-0054",
+   "official_name": "SNAI1e",
+   "rna_category": "eRNA",
+   "alternative_names": "",
+   "stable_identifier": "",
+   "identifier_source": "",
+   "organism": "Homo sapiens",
+   "source_database": "Primary literature",
+   "source_url": "https://pubmed.ncbi.nlm.nih.gov/",
+   "notes": "Also called SCREEM2 (PMID 40133308). No gene record."
+  },
+  {
+   "rna_id": "CRRA-RNA-0055",
+   "official_name": "SNAPC1e",
+   "rna_category": "eRNA",
+   "alternative_names": "",
+   "stable_identifier": "",
+   "identifier_source": "",
+   "organism": "Homo sapiens",
+   "source_database": "Primary literature",
+   "source_url": "https://pubmed.ncbi.nlm.nih.gov/",
+   "notes": "Enhancer RNA at the SNAPC1 locus (PMID 39950845). No gene record."
+  },
+  {
+   "rna_id": "CRRA-RNA-0056",
    "official_name": "TMZR1",
    "rna_category": "eRNA",
    "alternative_names": "",
@@ -600,9 +672,142 @@ window.CRRA_DATA = {
    "source_database": "NCBI Gene",
    "source_url": "https://www.ncbi.nlm.nih.gov/gene/141566930",
    "notes": "Enhancer RNA at the STAT3 locus, published as TMZR1-eRNA (PMID 39889913). One of the few eRNAs with an NCBI Gene record."
+  },
+  {
+   "rna_id": "CRRA-RNA-0057",
+   "official_name": "lncRNA-ATB",
+   "rna_category": "lncRNA",
+   "alternative_names": "",
+   "stable_identifier": "",
+   "identifier_source": "",
+   "organism": "Homo sapiens",
+   "source_database": "Primary literature",
+   "source_url": "https://pubmed.ncbi.nlm.nih.gov/",
+   "notes": "No NCBI Gene record; published as lncRNA-ATB (PMID 24768205)."
   }
  ],
- "interactions": [],
+ "interactions": [
+  {
+   "interaction_id": "CRRA-INT-0001",
+   "rna_id": "CRRA-RNA-0030",
+   "rna_name": "MIR21",
+   "target_name": "PDCD4",
+   "target_gene_id": "NCBIGene:27250",
+   "cancer_type": "Colorectal cancer",
+   "interaction_type": "mRNA target repression",
+   "regulatory_effect": "represses",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "3'UTR luciferase reporter, abolished by target-site mutation",
+   "supporting_pmid": "17968323",
+   "original_source": "PubMed abstract",
+   "notes": ""
+  },
+  {
+   "interaction_id": "CRRA-INT-0002",
+   "rna_id": "CRRA-RNA-0030",
+   "rna_name": "MIR21",
+   "target_name": "PTEN",
+   "target_gene_id": "NCBIGene:5728",
+   "cancer_type": "Hepatocellular carcinoma",
+   "interaction_type": "mRNA target repression",
+   "regulatory_effect": "represses",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "Reported direct target; assay not named in abstract",
+   "supporting_pmid": "17681183",
+   "original_source": "PubMed abstract",
+   "notes": "Class follows the authors' direct-target claim."
+  },
+  {
+   "interaction_id": "CRRA-INT-0003",
+   "rna_id": "CRRA-RNA-0015",
+   "rna_name": "MIR10B",
+   "target_name": "HOXD10",
+   "target_gene_id": "NCBIGene:3236",
+   "cancer_type": "Breast cancer",
+   "interaction_type": "mRNA target repression",
+   "regulatory_effect": "represses",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "Reported direct target; translational inhibition",
+   "supporting_pmid": "17898713",
+   "original_source": "PubMed abstract",
+   "notes": "Paper carries a Nature erratum and a published comment with author reply."
+  },
+  {
+   "interaction_id": "CRRA-INT-0004",
+   "rna_id": "CRRA-RNA-0021",
+   "rna_name": "MIR15A",
+   "target_name": "BCL2",
+   "target_gene_id": "NCBIGene:596",
+   "cancer_type": "Chronic lymphocytic leukemia",
+   "interaction_type": "mRNA target repression",
+   "regulatory_effect": "represses",
+   "evidence_class": "Experimental functional",
+   "experimental_method": "Post-transcriptional repression; assay not named in abstract",
+   "supporting_pmid": "16166262",
+   "original_source": "PubMed abstract",
+   "notes": "Weaker class chosen: abstract names no binding assay."
+  },
+  {
+   "interaction_id": "CRRA-INT-0005",
+   "rna_id": "CRRA-RNA-0022",
+   "rna_name": "MIR16-1",
+   "target_name": "BCL2",
+   "target_gene_id": "NCBIGene:596",
+   "cancer_type": "Chronic lymphocytic leukemia",
+   "interaction_type": "mRNA target repression",
+   "regulatory_effect": "represses",
+   "evidence_class": "Experimental functional",
+   "experimental_method": "Post-transcriptional repression; assay not named in abstract",
+   "supporting_pmid": "16166262",
+   "original_source": "PubMed abstract",
+   "notes": "Weaker class chosen: abstract names no binding assay."
+  },
+  {
+   "interaction_id": "CRRA-INT-0006",
+   "rna_id": "CRRA-RNA-0023",
+   "rna_name": "MIR17",
+   "target_name": "E2F1",
+   "target_gene_id": "NCBIGene:1869",
+   "cancer_type": "Not specified in abstract",
+   "interaction_type": "mRNA target repression",
+   "regulatory_effect": "represses",
+   "evidence_class": "Experimental functional",
+   "experimental_method": "Assay not named in abstract",
+   "supporting_pmid": "15944709",
+   "original_source": "PubMed abstract",
+   "notes": ""
+  },
+  {
+   "interaction_id": "CRRA-INT-0007",
+   "rna_id": "CRRA-RNA-0029",
+   "rna_name": "MIR20A",
+   "target_name": "E2F1",
+   "target_gene_id": "NCBIGene:1869",
+   "cancer_type": "Not specified in abstract",
+   "interaction_type": "mRNA target repression",
+   "regulatory_effect": "represses",
+   "evidence_class": "Experimental functional",
+   "experimental_method": "Assay not named in abstract",
+   "supporting_pmid": "15944709",
+   "original_source": "PubMed abstract",
+   "notes": ""
+  },
+  {
+   "interaction_id": "CRRA-INT-0008",
+   "rna_id": "CRRA-RNA-0045",
+   "rna_name": "MIRLET7A1",
+   "target_name": "HMGA2",
+   "target_gene_id": "NCBIGene:8091",
+   "cancer_type": "Lung cancer",
+   "interaction_type": "mRNA target repression",
+   "regulatory_effect": "represses",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "Dependence on multiple 3'UTR sites; rescue by ORF lacking 3'UTR",
+   "supporting_pmid": "17437991",
+   "original_source": "PubMed abstract",
+   "notes": "Recorded against let-7a-1 as the family representative."
+  }
+ ],
  "associations": [],
  "publications": [
   {
