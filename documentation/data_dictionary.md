@@ -78,6 +78,25 @@ the website and `verification_report.md` both report.
 
 `direction` and `clinical_association` are independent. An RNA can be recorded as upregulated with no clinical association, and vice versa.
 
+### What `direction` means, and when it stays empty
+
+`direction` records a change **in cancer tissue relative to non-cancer tissue**. It is filled
+only when the source makes that comparison.
+
+It is left **empty** when:
+
+- the comparison is *within* cancer — metastasising versus non-metastasising tumours, relapse
+  versus remission, one stage versus another. That is a prognostic or progression finding, and
+  it belongs in `clinical_association`, not here;
+- the source names no comparator at all;
+- the source reports high expression in cancer *and* in healthy tissue. MALAT1 (PMID 12970751)
+  is the worked example: it is a metastasis predictor in lung cancer and also abundant in
+  healthy lung, so "upregulated" would be false.
+
+The distinction matters because collapsing the two lets a prognostic finding read as an
+expression finding. A row with an empty `direction` and a populated `clinical_association` is
+a complete record, not a half-finished one.
+
 ## `publications.csv`
 
 | Column | Meaning |

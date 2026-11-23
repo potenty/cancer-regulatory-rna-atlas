@@ -234,3 +234,71 @@ factor of two.
 - **Cancer type is never inferred from a cell line.** PVT1 was tested in HCT116, which is
   colorectal, but the abstract does not say so; the row reads `Not specified in abstract` with
   the cell line in notes.
+
+---
+
+# Addendum — cancer association table, 2026-11-23
+
+37 rows across 31 publications, curated in 5 batches with `compile_curation.py` and `qc.py`
+run after each. All batches compiled with 0 errors.
+
+## Sourcing
+
+Rows were taken from the **PubMed abstracts refetched during this pass**, not from
+`abstract_notes.md`. The notes paraphrase in places — "~68%" appears there without its
+denominator — and a paraphrase of a paraphrase loses precision at each step. Cohort counts and
+wording in these rows come from the abstract text.
+
+## Distribution
+
+| Evidence class | Rows |
+|---|---|
+| Literature association | 32 |
+| Experimental functional | 3 |
+| Computational prediction | 2 |
+
+`direction` is populated on 21 rows and empty on 16, under the rule now recorded in
+`data_dictionary.md`: it means cancer versus non-cancer tissue, and nothing else.
+
+## Decisions recorded
+
+**`deleted` for Calin 2002 (PMID 12434020).** The abstract says miR15/miR16 are "deleted or
+down-regulated" without separating the two. Recorded as `deleted` with the ambiguity in notes
+rather than split into two rows that the source does not support.
+
+**Partial cohort counts are labelled.** Where an abstract gives a count for only part of a
+study — Kogo's 32, PCAT-1's 102, FAL1's 2,394 — `cohort_description` says which part it covers.
+The "~68%" figure has no denominator in the source, so its cohort field is empty and the figure
+sits in notes.
+
+## Papers excluded, and on what grounds
+
+- **MEG3 (17569660)** — abstract names no cancer type.
+- **Cimmino, Fabbri, Asangani and nine others** — report nothing at association level beyond
+  what their interaction rows already carry.
+- **Volinia (16461460), circHIPK3 (27050392)** — outside the scope of this pass.
+
+**Gregory (18376396) and Park (18381893) — excluded, and the exclusion is contested.**
+
+Two reasons were given. The first is substantive: these papers tie miR-200 loss to the EMT
+phenotype rather than to cancer-versus-normal expression or to outcome. That is a defensible
+reading, though both abstracts do report loss of expression in cancer material — invasive breast
+cancer lines and metaplastic breast specimens in Gregory, primary ovarian specimens in Park.
+
+The second reason given was that including them would add 11 family-expanded rows to the
+miR-200 skew that `limitations.md` already flags. **That reason is rejected.** A disclosed bias
+is not grounds for excluding qualifying records. Doing so would mean `limitations.md` describes
+a distribution that has been quietly corrected, and no reader could tell which rows were
+dropped. Selection decisions must be recorded here, where they can be disagreed with — not
+applied silently to improve a summary statistic.
+
+**Status: open.** If these papers are re-read and still judged phenotype-marker findings rather
+than cancer associations, the exclusion stands on that ground alone. Until then they are
+candidates, not settled exclusions.
+
+## Line endings
+
+A `.gitattributes` file now pins `.tsv`, `.csv` and source files to LF in the repository.
+Git's `autocrlf` on Windows was rewriting line endings on checkout, which risks a stray carriage
+return inside the last field of a row. The compiler strips them, but other tools reading the
+CSVs would not.

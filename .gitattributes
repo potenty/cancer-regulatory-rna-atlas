@@ -1,0 +1,11 @@
+# Keep curated data files LF in the repository regardless of platform.
+# Without this, Git's autocrlf on Windows rewrites line endings on checkout and
+# a stray CR can end up inside the last field of a row.
+*.tsv text eol=lf
+*.csv text eol=lf
+*.md  text eol=lf
+*.py  text eol=lf
+*.js  text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.xlsx binary

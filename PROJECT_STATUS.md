@@ -223,3 +223,30 @@ associations · 49 publications. QC 0 errors; workbook 0 formula errors; site no
 3. 88 of 94 evidence classes remain provisional pending full-text review.
 4. Six of nine planned databases unvisited; licence terms unread.
 5. 11 checklist papers still have no rows (see verification report addendum).
+
+
+### Session 3b — cancer associations
+
+**Added:** 37 cancer association rows across 31 publications, 12 cancer types.
+32 Literature association, 3 Experimental functional, 2 Computational prediction.
+`direction` populated on 21, empty on 16.
+
+**Rule recorded:** `direction` means cancer versus non-cancer tissue only. Within-cancer
+comparisons (metastasising vs not, relapse vs not) and sources naming no comparator leave it
+empty and put the finding in `clinical_association`. Documented in `data_dictionary.md`.
+
+**Added `.gitattributes`** pinning data and source files to LF, so Windows `autocrlf` cannot
+leave a stray carriage return in the last field of a row.
+
+**Open question — Gregory (18376396) and Park (18381893).** Excluded from the association
+table on two grounds. The first, that they report EMT-phenotype findings rather than
+cancer-versus-normal expression, is defensible and needs a re-read to settle. The second, that
+including them would worsen the miR-200 skew, is rejected: a disclosed bias is never grounds
+for dropping qualifying records. Recorded in the verification report as **open**, not settled.
+
+**Current counts:** 58 RNA records · 94 interactions · 37 cancer associations · 49
+publications · 135 evidence-bearing rows from 46 publications.
+QC 0 errors; workbook 0 formula errors; site no console errors.
+
+**Next:** `main_finding` is still empty for all 49 publications, and 88 interaction evidence
+classes remain provisional pending full-text review.
