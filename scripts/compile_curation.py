@@ -35,7 +35,8 @@ def read_tsv(name):
             line = line.rstrip("\n")
             if not line.strip() or line.lstrip().startswith("#"):
                 continue
-            parts = line.split("\t")
+            # Accept tab- or pipe-separated rows; pipes are easier to type.
+            parts = line.split("|") if ("|" in line and "\t" not in line) else line.split("\t")
             if header is None:
                 header = [p.strip() for p in parts]
                 continue
