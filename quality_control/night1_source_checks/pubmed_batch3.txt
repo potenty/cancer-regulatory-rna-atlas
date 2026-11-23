@@ -1,0 +1,7 @@
+# From PubMed esearch+esummary (2026-11-19), resolved replacements for earlier wrong candidates
+19202062 || 10.1073/pnas.0808042106 || 2009 || Proc Natl Acad Sci U S A || Sachdeva M, Zhu S, Wu F, Wu H, Walia V, Kumar S, et al. || p53 represses c-Myc through induction of the tumor suppressor miR-145.
+21151178 || 10.1038/onc.2010.568 || 2011 || Oncogene || Kotake Y, Nakagawa T, Kitagawa K, Suzuki S, Liu N, Kitagawa M, et al. || Long non-coding RNA ANRIL is required for the PRC2 recruitment to and silencing of p15(INK4B) tumor suppressor gene.
+17241883 || 10.1053/j.gastro.2006.08.026 || 2007 || Gastroenterology || Panzitt K, Tschernatsch MM, Guelly C, Moustafa T, Stradner M, Strohmaier HM, et al. || Characterization of HULC, a novel gene with striking up-regulation in hepatocellular carcinoma, as noncoding RNA.
+25203321 || 10.1016/j.ccr.2014.07.009 || 2014 || Cancer Cell || Hu X, Feng Y, Zhang D, Zhao SD, Hu Z, Greshock J, et al. || A functional genomic approach identifies FAL1 as an oncogenic long noncoding RNA that associates with BMI1 and represses p21 expression in cancer.
+18836484 || 10.1038/onc.2008.373 || 2009 || Oncogene || Mourtada-Maarabouni M, Pickard MR, Hedge VL, Farzaneh F, Williams GT || GAS5, a non-protein-coding RNA, controls apoptosis and is downregulated in breast cancer.
+23728302 || 10.1038/nature12210 || 2013 || Nature || Li W, Notani D, Ma Q, Tanasa B, Nunez E, Chen AY, et al. || Functional roles of enhancer RNAs for oestrogen-dependent transcriptional activation.
