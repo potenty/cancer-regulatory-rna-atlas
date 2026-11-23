@@ -201,7 +201,7 @@ def main():
 def report():
     os.makedirs(QC, exist_ok=True)
     with open(os.path.join(QC, "duplicate_audit.csv"), "w", newline="", encoding="utf-8") as fh:
-        w = csv.DictWriter(fh, fieldnames=["table", "duplicate_key", "key_fields", "row_ids", "count"])
+        w = csv.DictWriter(fh, lineterminator="\n", fieldnames=["table", "duplicate_key", "key_fields", "row_ids", "count"])
         w.writeheader()
         for row in dup_rows:
             w.writerow(row)

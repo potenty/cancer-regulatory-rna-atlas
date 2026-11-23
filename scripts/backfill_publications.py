@@ -75,7 +75,7 @@ def main():
             filled_f += 1
 
     with open(os.path.join(DB, "publications.csv"), "w", newline="", encoding="utf-8") as fh:
-        w = csv.DictWriter(fh, fieldnames=list(pubs[0].keys()))
+        w = csv.DictWriter(fh, lineterminator="\n", fieldnames=list(pubs[0].keys()))
         w.writeheader()
         w.writerows(pubs)
 

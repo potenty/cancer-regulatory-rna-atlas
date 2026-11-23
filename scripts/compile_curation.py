@@ -136,13 +136,13 @@ def main():
 
     if out:
         with open(os.path.join(DB, "interactions.csv"), "w", newline="", encoding="utf-8") as fh:
-            w = csv.DictWriter(fh, fieldnames=list(out[0].keys()))
+            w = csv.DictWriter(fh, lineterminator="\n", fieldnames=list(out[0].keys()))
             w.writeheader(); w.writerows(out)
     print(f"interactions.csv: {len(out)} rows")
 
     if aout:
         with open(os.path.join(DB, "cancer_associations.csv"), "w", newline="", encoding="utf-8") as fh:
-            w = csv.DictWriter(fh, fieldnames=list(aout[0].keys()))
+            w = csv.DictWriter(fh, lineterminator="\n", fieldnames=list(aout[0].keys()))
             w.writeheader(); w.writerows(aout)
     print(f"cancer_associations.csv: {len(aout)} rows")
     return 0

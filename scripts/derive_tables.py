@@ -148,7 +148,7 @@ def main():
                   "cancer_types", "rna_categories", "main_finding",
                   "pubmed_flags", "publication_url"]
     with open(os.path.join(DB, "publications.csv"), "w", newline="", encoding="utf-8") as fh:
-        w = csv.DictWriter(fh, fieldnames=pub_fields)
+        w = csv.DictWriter(fh, lineterminator="\n", fieldnames=pub_fields)
         w.writeheader()
         for pmid in sorted(keep, key=lambda p: (-int(pubs[p]["year"]), pubs[p]["journal"])):
             r = dict(pubs[pmid])
@@ -180,7 +180,7 @@ def main():
     ncrnas.sort(key=lambda t: t[0])
 
     with open(os.path.join(DB, "rna_records.csv"), "w", newline="", encoding="utf-8") as fh:
-        w = csv.DictWriter(fh, fieldnames=rna_fields)
+        w = csv.DictWriter(fh, lineterminator="\n", fieldnames=rna_fields)
         w.writeheader()
         for i, (sym, cat, gid) in enumerate(ncrnas, start=1):
             w.writerow({
@@ -214,7 +214,7 @@ def main():
             print(f"{name}: left as is")
             continue
         with open(path, "w", newline="", encoding="utf-8") as fh:
-            csv.DictWriter(fh, fieldnames=fields).writeheader()
+            csv.DictWriter(fh, lineterminator="\n", fieldnames=fields).writeheader()
         print(f"{name}: header written (no rows yet)")
     return 0
 
