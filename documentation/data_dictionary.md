@@ -26,7 +26,8 @@ Four CSV tables in `database/`. All files are UTF-8 with a header row. Empty str
 | `rna_name` | Denormalised for readability. |
 | `target_name` | Target gene, RNA, or protein complex. |
 | `target_gene_id` | `NCBIGene:` ID. Empty where the target is a complex, or where the source names no specific gene. |
-| `cancer_type` | As stated by the source, or `Not specified in abstract`. |
+| `cancer_type` | As stated by the source, or `Not specified in abstract`. Never rewritten. |
+| `cancer_group` | Normalised term derived from `cancer_type` by `scripts/cancer_vocab.py`. Multi-valued, semicolon-separated. |
 | `interaction_type` | e.g. `mRNA target repression`, `transcriptional regulation`, `RNA-protein binding`, `miRNA sponging`, `enhancer-promoter activation`. |
 | `regulatory_effect` | `represses`, `activates`, `stabilises`, or empty if undocumented. |
 | `evidence_class` | One of the four classes in `methodology.md`. |
@@ -68,7 +69,8 @@ the website and `verification_report.md` both report.
 |---|---|
 | `association_id` | CRRA-local key, e.g. `CRRA-CA-0001`. |
 | `rna_id` / `rna_name` | Foreign key and denormalised name. |
-| `cancer_type` | As stated by the source. |
+| `cancer_type` | As stated by the source. Never rewritten. |
+| `cancer_group` | Normalised term derived from `cancer_type`. Multi-valued, semicolon-separated. |
 | `direction` | `upregulated`, `downregulated`, `deleted`, `amplified`, or empty. |
 | `clinical_association` | e.g. `poor prognosis`, `metastasis`, or empty. |
 | `evidence_class` | As above. |
@@ -112,6 +114,23 @@ a complete record, not a half-finished one.
 | `main_finding` | Curator's paraphrase of the abstract. Not a quotation. |
 | `pubmed_flags` | Erratum, comment, or expression-of-concern notices. Empty if none. |
 | `publication_url` | `https://pubmed.ncbi.nlm.nih.gov/<pmid>/`. |
+
+### Why there are two cancer columns
+
+`cancer_type` is what the publication said. It is never edited, because it is the record.
+
+`cancer_group` is derived from it by `scripts/cancer_vocab.py` so that filters and counts work.
+Two problems made it necessary:
+
+- **Subtypes split their parent.** `Lung cancer` and `Non-small cell lung cancer` were separate
+  filter values for 5 and 7 rows; a reader filtering on one silently missed the other. They now
+  share the group `Lung cancer`, while each row still displays its own source wording.
+- **Compound cells were unreachable.** `Hepatocellular carcinoma; bladder carcinoma` is one
+  string, so filtering on `Bladder carcinoma` matched nothing at all. `cancer_group` is
+  multi-valued, so those rows now appear under both `Liver cancer` and `Bladder cancer`.
+
+A source term with no entry in the vocabulary becomes its own group and `qc.py` raises a
+warning, so new terms get added deliberately rather than silently folded into a neighbour.
 
 ## Conventions
 

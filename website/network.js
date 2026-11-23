@@ -44,6 +44,12 @@
   var catOf = {};
   rnas.forEach(function (r) { catOf[r.official_name] = r.rna_category || ""; });
 
+  function groupsOf(row) {
+    return ((row.cancer_group || row.cancer_type || "").split(";"))
+      .map(function (s) { return s.trim(); })
+      .filter(Boolean);
+  }
+
   var svg, sim = null, nodes = [], links = [], hover = null, pinned = null;
   var W = 900, H = 560;
 
@@ -59,7 +65,7 @@
   function build(filters) {
     var rows = interactions.filter(function (r) {
       if (filters.ev && (r.evidence_class || "").trim() !== filters.ev) return false;
-      if (filters.cancer && (r.cancer_type || "").trim() !== filters.cancer) return false;
+      if (filters.cancer && groupsOf(r).indexOf(filters.cancer) === -1) return false;
       if (filters.cls && catOf[(r.rna_name || "").trim()] !== filters.cls) return false;
       return true;
     });
@@ -298,7 +304,13 @@
       .filter(function (c) {
         return interactions.some(function (r) { return (r.evidence_class || "").trim() === c; });
       }));
-    fill(el("net-cancer"), uniq(interactions, function (r) { return (r.cancer_type || "").trim(); }));
+    var gseen = {};
+    interactions.forEach(function (r) { groupsOf(r).forEach(function (g) { gseen[g] = true; }); });
+    fill(el("net-cancer"), Object.keys(gseen).sort(function (a, b) {
+      if (a === "Not specified") return 1;
+      if (b === "Not specified") return -1;
+      return a.localeCompare(b);
+    }));
     fill(el("net-class"), uniq(interactions, function (r) { return catOf[(r.rna_name || "").trim()]; }));
 
     // Legend — always present, so identity never rests on colour alone.

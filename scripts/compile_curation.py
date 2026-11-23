@@ -7,6 +7,10 @@ target_gene_id against the existing tables, assigns stable local keys, and
 validates the evidence vocabulary. It adds no record content of its own.
 """
 import csv, os, sys
+sys_path_added = os.path.dirname(os.path.abspath(__file__))
+if sys_path_added not in sys.path:
+    sys.path.insert(0, sys_path_added)
+from cancer_vocab import groups_for
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(ROOT, "database")
@@ -95,6 +99,7 @@ def main():
             "target_name": r["target_name"],
             "target_gene_id": tgt,
             "cancer_type": r["cancer_type"],
+            "cancer_group": "; ".join(groups_for(r["cancer_type"])),
             "interaction_type": r["interaction_type"],
             "regulatory_effect": r.get("regulatory_effect", ""),
             "evidence_class": r["evidence_class"],
@@ -121,6 +126,7 @@ def main():
             "rna_id": rna_by_name[rna]["rna_id"],
             "rna_name": rna,
             "cancer_type": r["cancer_type"],
+            "cancer_group": "; ".join(groups_for(r["cancer_type"])),
             "direction": r.get("direction", ""),
             "clinical_association": r.get("clinical_association", ""),
             "evidence_class": r["evidence_class"],

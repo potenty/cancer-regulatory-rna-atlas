@@ -67,6 +67,30 @@
     return true;
   }
 
+
+  /* cancer_group is a normalised term derived from cancer_type, and one row can carry
+     several (a paper reporting two cancers). Filters match any of them; tables still
+     display the source's own wording. */
+  function groupsOf(row) {
+    return ((row.cancer_group || row.cancer_type || "").split(";"))
+      .map(function (s) { return s.trim(); })
+      .filter(Boolean);
+  }
+
+  function inGroup(row, g) {
+    return groupsOf(row).indexOf(g) !== -1;
+  }
+
+  function uniqueGroups(rows) {
+    var seen = Object.create(null);
+    rows.forEach(function (r) { groupsOf(r).forEach(function (g) { seen[g] = true; }); });
+    return Object.keys(seen).sort(function (a, b) {
+      if (a === "Not specified") return 1;
+      if (b === "Not specified") return -1;
+      return a.localeCompare(b);
+    });
+  }
+
   function uniqueSorted(rows, field) {
     var seen = Object.create(null);
     rows.forEach(function (r) {
@@ -186,8 +210,9 @@
     var gen = [];
     var cancers = {};
     interactions.concat(associations).forEach(function (r) {
-      var c = (r.cancer_type || "").trim();
-      if (c && c.toLowerCase().indexOf("not specified") === -1) cancers[c] = true;
+      groupsOf(r).forEach(function (g) {
+        if (g && g !== "Not specified") cancers[g] = true;
+      });
     });
     var nCancer = Object.keys(cancers).length;
     if (nCancer) gen.push(nCancer + " named cancer types");
@@ -283,7 +308,7 @@
 
     var rows = interactions.filter(function (r) {
       if (ev && (r.evidence_class || "").trim() !== ev) return false;
-      if (cancer && (r.cancer_type || "").trim() !== cancer) return false;
+      if (cancer && !inGroup(r, cancer)) return false;
       if (type && (r.interaction_type || "").trim() !== type) return false;
       if (q && !matches(haystack(r, INT_SEARCH), q)) return false;
       return true;
@@ -467,7 +492,7 @@
     fillSelect(el("int-ev"), EV_CLASSES.filter(function (c) {
       return interactions.some(function (r) { return (r.evidence_class || "").trim() === c; });
     }), true);
-    fillSelect(el("int-cancer"), uniqueSorted(interactions, "cancer_type"), true);
+    fillSelect(el("int-cancer"), uniqueGroups(interactions), true);
     fillSelect(el("int-type"), uniqueSorted(interactions, "interaction_type"), true);
 
     bind(["rna-q", "rna-cat", "rna-id-state", "rna-sort"], renderRnas);

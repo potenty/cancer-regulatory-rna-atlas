@@ -17,6 +17,8 @@ Checks performed:
  10. Cross-table name agreement (denormalised rna_name matches rna_records)
 """
 import csv, os, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from cancer_vocab import unmapped
 from collections import defaultdict, Counter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -183,6 +185,13 @@ def main():
         pm, url = (p.get("pmid") or "").strip(), (p.get("publication_url") or "").strip()
         if pm and url and pm not in url:
             add("ERROR", "url-mismatch", f"publication {pm}: URL {url} does not contain its PMID")
+
+    # --- cancer vocabulary ---
+    miss = unmapped([r.get("cancer_type", "") for r in inter + assoc])
+    for m in miss:
+        add("WARN", "cancer-vocab",
+            f"{m!r} has no entry in scripts/cancer_vocab.py; it groups as itself. "
+            f"Add it deliberately rather than leaving it to default.")
 
     # --- summary counts ----------------------------------------------------
     add("INFO", "counts", f"{len(rnas)} RNA records, {len(inter)} interactions, "
