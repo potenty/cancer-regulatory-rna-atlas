@@ -22,6 +22,16 @@ v0.1 holds on the order of tens of records, chosen because they are well known a
 
 **CRRA cannot be used to estimate how common anything is.** Counts in CRRA reflect curation effort, not biology. An RNA absent from CRRA is not evidence that it is unstudied.
 
+## 3a. Row counts are not finding counts
+
+A row is one RNA-target pair from one publication. Where a paper reports a result for an RNA
+family, each member gets a row, so a single abstract can produce five or more. Two miR-200
+papers account for 22 of the interaction rows.
+
+Always read the row count against the number of distinct publications behind it. The website
+shows both. Treating rows as independent findings would overstate the evidence by roughly a
+factor of two in the current data.
+
 ## 4. Enhancer RNA coverage is structurally thin
 
 No curated database catalogues eRNA–target interactions the way miRTarBase does for miRNAs. eRNA records therefore come from individual papers, several eRNAs have no stable identifier anywhere, and the naming is inconsistent between labs. This is a genuine gap in the field.

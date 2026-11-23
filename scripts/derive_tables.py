@@ -67,6 +67,8 @@ UNIDENTIFIED = [
     ("IKBKE-e", "eRNA", "Enhancer RNA at the IKBKE locus (PMID 41542764). No gene record."),
     ("CCND1e", "eRNA", "Enhancer RNA at the CCND1 locus (PMID 39950845). No gene record."),
     ("SNAPC1e", "eRNA", "Enhancer RNA at the SNAPC1 locus (PMID 39950845). No gene record."),
+    ("circHIPK3", "circRNA", "Circular RNA from HIPK3 exon 2 (PMID 27050392). No gene record of "
+                             "its own; HIPK3 (NCBIGene:10114) is the linear host gene, not this transcript."),
 ]
 
 

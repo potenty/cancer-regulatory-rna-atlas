@@ -37,6 +37,31 @@ Four CSV tables in `database/`. All files are UTF-8 with a header row. Empty str
 
 A row with an empty `evidence_class` is invalid and fails QC.
 
+### Reading direction in `interactions.csv`
+
+Most rows read **RNA acts on target**: `MIR21` represses `PDCD4`.
+
+Rows whose `interaction_type` begins with **`upstream`** read the other way — the
+regulatory RNA is the thing being acted *on*, and `target_name` holds its regulator.
+`MIR34A | TP53 | upstream transcriptional activation | activates` means *TP53 activates
+MIR34A*, not the reverse. Every such row also begins its `notes` with
+`Direction: X regulates the RNA.`
+
+This keeps one row per relationship rather than splitting the table, at the cost of a
+column whose meaning depends on `interaction_type`. A future schema should probably carry
+an explicit direction column instead.
+
+### RNA families named collectively
+
+Where a source reports a result for a family as a whole ("the miR-200 family"), each member
+held in `rna_records.csv` gets its own row, and every one of those rows says so in `notes`.
+The exception is let-7, recorded against `MIRLET7A1` alone, because that is the only let-7
+locus in this atlas.
+
+**This means row counts are not finding counts.** Two papers on the miR-200 family produce
+22 rows. Any count of rows must be read alongside the count of distinct publications, which
+the website and `verification_report.md` both report.
+
 ## `cancer_associations.csv`
 
 | Column | Meaning |

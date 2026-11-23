@@ -1,7 +1,7 @@
 rna_name	target_name	target_gene_id	cancer_type	interaction_type	regulatory_effect	evidence_class	experimental_method	supporting_pmid	notes
 MIR21	PDCD4		Colorectal cancer	mRNA target repression	represses	Direct experimental	3'UTR luciferase reporter, abolished by target-site mutation	17968323	
-MIR21	PTEN		Hepatocellular carcinoma	mRNA target repression	represses	Direct experimental	Reported direct target; assay not named in abstract	17681183	Class follows the authors' direct-target claim.
-MIR10B	HOXD10		Breast cancer	mRNA target repression	represses	Direct experimental	Reported direct target; translational inhibition	17898713	Paper carries a Nature erratum and a published comment with author reply.
+MIR21	PTEN		Hepatocellular carcinoma	mRNA target repression	represses	Experimental functional	Reported direct target; assay not named in abstract	17681183	Downgraded from Direct experimental on review: the abstract asserts a direct target but names no binding assay, so the weaker-class rule applies.
+MIR10B	HOXD10		Breast cancer	mRNA target repression	represses	Experimental functional	Translational inhibition reported; binding assay not named in abstract	17898713	Downgraded from Direct experimental on review: no binding assay named. Paper carries a Nature erratum and a published comment with author reply.
 MIR15A	BCL2		Chronic lymphocytic leukemia	mRNA target repression	represses	Experimental functional	Post-transcriptional repression; assay not named in abstract	16166262	Weaker class chosen: abstract names no binding assay.
 MIR16-1	BCL2		Chronic lymphocytic leukemia	mRNA target repression	represses	Experimental functional	Post-transcriptional repression; assay not named in abstract	16166262	Weaker class chosen: abstract names no binding assay.
 MIR17	E2F1		Not specified in abstract	mRNA target repression	represses	Experimental functional	Assay not named in abstract	15944709	

@@ -157,3 +157,80 @@ eRNAs have no gene record to resolve, so they cannot be entered the same way.
 
 This is a known deficiency of v0.1, not a finding about biology, and it is carried into
 `PROJECT_STATUS.md` as outstanding work.
+
+---
+
+# Addendum — interaction table review, 2026-11-22
+
+94 interaction rows were curated from `abstract_notes.md` in 13 batches, with
+`compile_curation.py` and `qc.py` run after each. All batches compiled with 0 errors.
+
+## Corrections made on review
+
+Two rows from the original seed batch were **downgraded from `Direct experimental` to
+`Experimental functional`**:
+
+| Row | PMID | Reason |
+|---|---|---|
+| `MIR21` – `PTEN` | 17681183 | Abstract asserts a direct target but names no binding assay |
+| `MIR10B` – `HOXD10` | 17898713 | Reports translational inhibition; no binding assay named |
+
+Both were written as format examples before the rule was applied consistently, then copied as
+the pattern for later rows. The rule in `methodology.md` is that a source asserting a direct
+target without naming the assay gets the weaker class; these two broke it. The error was found
+by re-reading the seed rows against the rule, not by any automated check — **`qc.py` validates
+the evidence vocabulary but cannot tell whether a class is correct for its source.** Only
+re-reading catches that.
+
+## Evidence distribution after correction
+
+| Class | Rows |
+|---|---|
+| Direct experimental | 4 |
+| Experimental functional | 88 |
+| Literature association | 2 |
+
+**Four rows out of 94 carry direct experimental support.** All four name an actual binding
+test: ANRIL–CBX7 (structure-guided disruption), ANRIL–SUZ12 (RIP), miR-21–PDCD4 (reporter with
+site mutation), let-7a-1–HMGA2 (3'UTR site dependence with ORF rescue).
+
+This is a result about abstract-level curation, not about the literature. Abstracts routinely
+say "directly targets" without naming the method, and under the weaker-class rule that
+produces `Experimental functional`. Many of those 88 rows are probably supported by direct
+evidence in the full text. **No evidence class should be treated as final until full-text
+review.**
+
+## Row counts versus finding counts
+
+94 rows come from **38 distinct publications**. Where a paper reports a result for an RNA
+family, each member held in `rna_records.csv` gets a row: two miR-200 papers account for 22
+rows between them.
+
+The website now reports both numbers, and `data_dictionary.md` and `limitations.md` record the
+convention. Reading rows as independent findings would overstate the evidence by roughly a
+factor of two.
+
+## Coverage
+
+32 of the 43 checklist papers now have interaction rows. The remaining 11 do not support one:
+
+- **Expression, prognosis or deletion only** — belong in `cancer_associations.csv`:
+  12434020, 21862635, 12970751, 23243023, 17241883, 18836484, 10606244.
+- **No assignable RNA–target pair:** 16461460 (Volinia) — the abstract does not say which
+  miRNA the confirmed RB1 and TGFBR2 targets belong to.
+- **Class-level eRNA findings with no named transcript:** 23728302, 23273978.
+- **Resolved this session:** 27050392 (circHIPK3) — an RNA record has now been added, so its
+  miR-124 row can be entered.
+
+## Conventions recorded
+
+- **Upstream regulation** reverses the reading direction of a row; `target_name` holds the
+  regulator. Documented in `data_dictionary.md`.
+- **Protein complexes** (PRC2, SWI/SNF, AR–MED1) and miRNA families carry `-` in the gene ID
+  field rather than a guessed gene.
+- **`regulatory_effect` left empty** where the source states an interaction without a
+  direction. One row (H19–ANG/FGF18) had `activates` entered and then cleared on review,
+  because the abstract calls these "potential" targets without stating direction.
+- **Cancer type is never inferred from a cell line.** PVT1 was tested in HCT116, which is
+  colorectal, but the abstract does not say so; the row reads `Not specified in abstract` with
+  the cell line in notes.

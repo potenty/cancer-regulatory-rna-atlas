@@ -136,9 +136,19 @@
   // ---------- home ----------
 
   function renderHome() {
+    /* Rows are not findings: a family result yields one row per member, so the
+       count of distinct source publications is shown alongside the row count. */
+    var intPubs = {};
+    interactions.forEach(function (r) {
+      var p = (r.supporting_pmid || "").trim();
+      if (p) intPubs[p] = true;
+    });
+    var nIntPubs = Object.keys(intPubs).length;
+
     var stats = [
       [rnas.length, "RNA records"],
       [interactions.length, "Interactions"],
+      [nIntPubs, "from publications"],
       [associations.length, "Cancer associations"],
       [publications.length, "Publications"]
     ];
@@ -172,6 +182,10 @@
       .filter(function (y) { return !isNaN(y); });
     if (years.length) {
       gen.push("literature spanning " + Math.min.apply(null, years) + "–" + Math.max.apply(null, years));
+    }
+    if (interactions.length && nIntPubs) {
+      gen.unshift(interactions.length + " interaction rows drawn from " + nIntPubs +
+                  " publications");
     }
     el("home-generated").innerHTML = gen.length ? esc(gen.join(" · ")) : "";
   }

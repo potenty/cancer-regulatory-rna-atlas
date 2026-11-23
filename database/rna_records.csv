@@ -55,4 +55,5 @@ CRRA-RNA-0053,SMIM10L2A,lncRNA,,NCBIGene:399668,NCBI Gene,Homo sapiens,NCBI Gene
 CRRA-RNA-0054,SNAI1e,eRNA,,,,Homo sapiens,Primary literature,https://pubmed.ncbi.nlm.nih.gov/,Also called SCREEM2 (PMID 40133308). No gene record.
 CRRA-RNA-0055,SNAPC1e,eRNA,,,,Homo sapiens,Primary literature,https://pubmed.ncbi.nlm.nih.gov/,Enhancer RNA at the SNAPC1 locus (PMID 39950845). No gene record.
 CRRA-RNA-0056,TMZR1,eRNA,,NCBIGene:141566930,NCBI Gene,Homo sapiens,NCBI Gene,https://www.ncbi.nlm.nih.gov/gene/141566930,"Enhancer RNA at the STAT3 locus, published as TMZR1-eRNA (PMID 39889913). One of the few eRNAs with an NCBI Gene record."
-CRRA-RNA-0057,lncRNA-ATB,lncRNA,,,,Homo sapiens,Primary literature,https://pubmed.ncbi.nlm.nih.gov/,No NCBI Gene record; published as lncRNA-ATB (PMID 24768205).
+CRRA-RNA-0057,circHIPK3,circRNA,,,,Homo sapiens,Primary literature,https://pubmed.ncbi.nlm.nih.gov/,"Circular RNA from HIPK3 exon 2 (PMID 27050392). No gene record of its own; HIPK3 (NCBIGene:10114) is the linear host gene, not this transcript."
+CRRA-RNA-0058,lncRNA-ATB,lncRNA,,,,Homo sapiens,Primary literature,https://pubmed.ncbi.nlm.nih.gov/,No NCBI Gene record; published as lncRNA-ATB (PMID 24768205).
