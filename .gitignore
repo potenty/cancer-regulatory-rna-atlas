@@ -1,3 +1,5 @@
 work/
 __pycache__/
 .DS_Store
+
+# fulltext_access.csv IS committed - it carries the reviewed column, which is a record.
