@@ -308,3 +308,38 @@ A `.gitattributes` file now pins `.tsv`, `.csv` and source files to LF in the re
 Git's `autocrlf` on Windows was rewriting line endings on checkout, which risks a stray carriage
 return inside the last field of a row. The compiler strips them, but other tools reading the
 CSVs would not.
+
+---
+
+# Addendum — full-text access survey, 2026-11-23
+
+`scripts/check_fulltext_access.py` ranks papers by how many provisional
+(`Experimental functional`) rows each one carries, so review can start where a single read
+fixes the most records. Output: `quality_control/fulltext_access.csv`, with a `reviewed`
+column to track progress.
+
+**Coverage:** 37 papers carry 91 provisional rows — 88 interaction, 3 association. Free full
+text is available for the large majority, via PubMed Central or the publisher's own site.
+
+**Not freely available:** Gregory 2008 (18376396) is the most valuable single paper in the
+queue at 12 rows, and has no free copy. Huang 2008, Ma 2007 and Stasevich 2025 account for the
+rest. If library access cannot be obtained, those rows stay provisional and the reason is
+recorded here. "Could not access" is a documented outcome, not a gap to be filled by inference.
+
+## Two defects found in the checker itself
+
+Both were caught on review of its output, not by the script's own checks.
+
+1. **Absence from PubMed Central was treated as paywalled.** Many publishers release their own
+   back content. Adding PubMed's free-full-text filter moved four papers (9 rows) from
+   "unavailable" to free.
+2. **The paper list was built from interaction rows only**, so a paper whose only provisional
+   rows are associations never appeared — Gutschner (23243023) has no interaction rows at all,
+   and Matouk (17786216) has only `Literature association` ones. `association_rows` was
+   therefore 0 for every paper, and 3 rows were missing from the ranking. The commit that
+   introduced the column claimed it counted association rows; it did not. The list is now the
+   union of both tables.
+
+The second is worth recording as a process point: the tool reported a column of zeros and
+nothing flagged it. It was found by someone reading the output and asking why a number that
+should have been non-zero was not.

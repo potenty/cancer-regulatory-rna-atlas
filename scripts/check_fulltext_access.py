@@ -49,12 +49,20 @@ def main():
         r["supporting_pmid"] for r in load("cancer_associations.csv")
         if r.get("evidence_class") == "Experimental functional"
     )
-    if not upgradable:
+    if not upgradable and not assoc_rows:
         print("No Experimental functional rows to review.")
         return 0
 
-    pmids = sorted(upgradable, key=lambda p: -upgradable[p])
-    print(f"{len(pmids)} papers carry {sum(upgradable.values())} provisional rows.")
+    # Build the list from BOTH counters. Taking it from interaction rows alone
+    # dropped any paper whose only provisional rows are associations - Gutschner
+    # (MALAT1) has no interaction rows at all, and Matouk (H19) has only
+    # Literature association ones, so neither appeared.
+    def total(pid):
+        return upgradable[pid] + assoc_rows[pid]
+
+    pmids = sorted(set(upgradable) | set(assoc_rows), key=lambda p: (-total(p), p))
+    print(f"{len(pmids)} papers carry {sum(total(p) for p in pmids)} provisional rows "
+          f"({sum(upgradable.values())} interaction, {sum(assoc_rows.values())} association).")
 
     # PubMed Central is not the only free route: many publishers release their own
     # back content. PubMed's "free full text" filter catches those too, so a paper
