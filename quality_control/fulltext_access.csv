@@ -9,7 +9,7 @@ supporting_pmid,provisional_rows,interaction_rows,association_rows,year,journal,
 28174233,3,3,0,2017,Clin Cancer Res,Circular RNA ciRS-7-A Promising Prognostic Biomarker and a Potential Therapeutic Target in Colorectal Cancer.,PMC5511556,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5511556/,yes (PMC),no change
 15766527,2,2,0,2005,Cell,RAS is regulated by the let-7 microRNA family.,,https://pubmed.ncbi.nlm.nih.gov/15766527/,yes (publisher),"not accessed - publisher 403 (cell.com, Elsevier)"
 15944709,2,2,0,2005,Nature,c-Myc-regulated microRNAs modulate E2F1 expression.,,https://pubmed.ncbi.nlm.nih.gov/15944709/,yes (publisher),not accessed - paywalled (nature.com preview only; access report's 'free' is wrong)
-16166262,2,2,0,2005,Proc Natl Acad Sci U S A,miR-15 and miR-16 induce apoptosis by targeting BCL2.,PMC1236577,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1236577/,yes (PMC),
+16166262,2,2,0,2005,Proc Natl Acad Sci U S A,miR-15 and miR-16 induce apoptosis by targeting BCL2.,PMC1236577,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1236577/,yes (PMC),upgraded 2
 17627278,2,2,0,2007,EMBO J,Regulation of the p27(Kip1) tumor suppressor by miR-221 and miR-222 promotes cancer cell proliferation.,PMC1949005,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1949005/,yes (PMC),
 17786216,2,0,2,2007,PLoS One,The H19 non-coding RNA is essential for human tumor growth.,PMC1959184,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1959184/,yes (PMC),
 18185580,2,2,0,2008,Nature,Endogenous human microRNAs that suppress breast cancer metastasis.,PMC2782491,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2782491/,yes (PMC),
