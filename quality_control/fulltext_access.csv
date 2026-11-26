@@ -5,7 +5,7 @@ supporting_pmid,provisional_rows,interaction_rows,association_rows,year,journal,
 17554337,3,3,0,2007,Nature,A microRNA component of the p53 tumour suppressor network.,PMC4590999,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4590999/,yes (PMC),
 17569660,3,3,0,2007,J Biol Chem,Activation of p53 by MEG3 non-coding RNA.,,https://pubmed.ncbi.nlm.nih.gov/17569660/,yes (publisher),"not accessed - publisher 403 (jbc.org, Elsevier)"
 20173740,3,3,0,2010,Nat Cell Biol,"miR-9, a MYC/MYCN-activated microRNA, regulates E-cadherin and cancer metastasis.",PMC2845545,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2845545/,yes (PMC),upgraded 3
-24778216,3,3,0,2014,Proc Natl Acad Sci U S A,Enhancer RNAs participate in androgen receptor-driven looping that selectively enhances gene activation.,PMC4034202,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4034202/,yes (PMC),
+24778216,3,3,0,2014,Proc Natl Acad Sci U S A,Enhancer RNAs participate in androgen receptor-driven looping that selectively enhances gene activation.,PMC4034202,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4034202/,yes (PMC),upgraded 1
 28174233,3,3,0,2017,Clin Cancer Res,Circular RNA ciRS-7-A Promising Prognostic Biomarker and a Potential Therapeutic Target in Colorectal Cancer.,PMC5511556,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5511556/,yes (PMC),
 15766527,2,2,0,2005,Cell,RAS is regulated by the let-7 microRNA family.,,https://pubmed.ncbi.nlm.nih.gov/15766527/,yes (publisher),
 15944709,2,2,0,2005,Nature,c-Myc-regulated microRNAs modulate E2F1 expression.,,https://pubmed.ncbi.nlm.nih.gov/15944709/,yes (publisher),
