@@ -3,7 +3,7 @@ supporting_pmid,provisional_rows,interaction_rows,association_rows,year,journal,
 17890317,6,6,0,2007,Proc Natl Acad Sci U S A,MicroRNA-29 family reverts aberrant methylation in lung cancer by targeting DNA methyltransferases 3A and 3B.,PMC2000384,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2000384/,yes (PMC),
 24768205,4,4,0,2014,Cancer Cell,A long noncoding RNA activated by TGF-β promotes the invasion-metastasis cascade in hepatocellular carcinoma.,,https://pubmed.ncbi.nlm.nih.gov/24768205/,yes (publisher),not accessed - publisher 403 (cell.com and ScienceDirect)
 17554337,3,3,0,2007,Nature,A microRNA component of the p53 tumour suppressor network.,PMC4590999,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4590999/,yes (PMC),
-17569660,3,3,0,2007,J Biol Chem,Activation of p53 by MEG3 non-coding RNA.,,https://pubmed.ncbi.nlm.nih.gov/17569660/,yes (publisher),
+17569660,3,3,0,2007,J Biol Chem,Activation of p53 by MEG3 non-coding RNA.,,https://pubmed.ncbi.nlm.nih.gov/17569660/,yes (publisher),"not accessed - publisher 403 (jbc.org, Elsevier)"
 20173740,3,3,0,2010,Nat Cell Biol,"miR-9, a MYC/MYCN-activated microRNA, regulates E-cadherin and cancer metastasis.",PMC2845545,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2845545/,yes (PMC),
 24778216,3,3,0,2014,Proc Natl Acad Sci U S A,Enhancer RNAs participate in androgen receptor-driven looping that selectively enhances gene activation.,PMC4034202,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4034202/,yes (PMC),
 28174233,3,3,0,2017,Clin Cancer Res,Circular RNA ciRS-7-A Promising Prognostic Biomarker and a Potential Therapeutic Target in Colorectal Cancer.,PMC5511556,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5511556/,yes (PMC),
