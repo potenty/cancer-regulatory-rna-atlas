@@ -103,6 +103,13 @@ def main():
                 pmcid.setdefault(pid, "")
         time.sleep(0.4)
 
+    # Carry review outcomes forward: the reviewed column is written by hand during
+    # full-text review, and regenerating the report must not erase it.
+    previous = {}
+    if os.path.exists(OUT):
+        with open(OUT, newline="", encoding="utf-8") as fh:
+            previous = {r["supporting_pmid"]: r.get("reviewed", "") for r in csv.DictReader(fh)}
+
     rows = []
     for pid in pmids:
         p = pubs.get(pid, {})
@@ -122,7 +129,7 @@ def main():
             "free_full_text": ("yes (PMC)" if pmc
                                else "yes (publisher)" if pid in free_elsewhere
                                else "not free - check library access"),
-            "reviewed": "",
+            "reviewed": previous.get(pid, ""),
         })
 
     rows.sort(key=lambda r: (not r["free_full_text"].startswith("yes"), -r["provisional_rows"]))
