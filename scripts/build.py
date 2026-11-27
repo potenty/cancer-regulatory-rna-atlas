@@ -178,6 +178,7 @@ def main():
 
     data["_meta"] = {
         "generated_from": "database/*.csv",
+        "built": __import__("datetime").date.today().isoformat(),
         "evidence_classes": ["Direct experimental", "Experimental functional",
                              "Computational prediction", "Literature association"],
         "note": "Counts reflect curation effort, not biological frequency. "

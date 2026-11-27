@@ -111,5 +111,7 @@ Complete as a pilot. Extending it to a finding would need: more verified rows pe
 access for the 8 paywalled papers, and the remaining databases in
 [`source_registry.md`](documentation/source_registry.md) with their licence terms read first.
 
+Curated by **Emmanuel Brown**, independent researcher.
+
 An independent project. No institutional affiliation, sponsorship or endorsement is claimed, and
 nothing here is medical advice.

@@ -3459,6 +3459,7 @@ window.CRRA_DATA = {
  ],
  "_meta": {
   "generated_from": "database/*.csv",
+  "built": "2026-11-27",
   "evidence_classes": [
    "Direct experimental",
    "Experimental functional",
