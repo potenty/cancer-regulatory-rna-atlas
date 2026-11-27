@@ -757,11 +757,11 @@ window.CRRA_DATA = {
    "cancer_group": "Leukemia",
    "interaction_type": "mRNA target repression",
    "regulatory_effect": "represses",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "Post-transcriptional repression; assay not named in abstract",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "Luciferase reporter with 536-bp BCL2 3'UTR in MEG-01 cells; miR-15a repression abolished by 9-bp (3'M1) or 5-bp (3'M2) deletion of the complementary site",
    "supporting_pmid": "16166262",
    "original_source": "PubMed abstract",
-   "notes": "Weaker class chosen: abstract names no binding assay."
+   "notes": "Night 1 class was Experimental functional because the abstract names no binding assay. Upgraded on full-text review (Results, Fig. 2C; site map Fig. 1A; Materials and Methods, luciferase reporter construction): miR-15a tested on its own and both 3'UTR mutants abolished the interaction. Binding assay ran in MEG-01 (megakaryocytic leukemia line), not CLL cells; cancer type kept as the paper's CLL context."
   },
   {
    "interaction_id": "CRRA-INT-0005",
@@ -773,11 +773,11 @@ window.CRRA_DATA = {
    "cancer_group": "Leukemia",
    "interaction_type": "mRNA target repression",
    "regulatory_effect": "represses",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "Post-transcriptional repression; assay not named in abstract",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "Luciferase reporter with 536-bp BCL2 3'UTR in MEG-01 cells; miR-16-1 repression abolished by 9-bp (3'M1) or 5-bp (3'M2) deletion of the complementary site",
    "supporting_pmid": "16166262",
    "original_source": "PubMed abstract",
-   "notes": "Weaker class chosen: abstract names no binding assay."
+   "notes": "Night 1 class was Experimental functional because the abstract names no binding assay. Upgraded on full-text review (Results, Fig. 2C; site map Fig. 1A; Materials and Methods, luciferase reporter construction): miR-16-1 tested on its own and both 3'UTR mutants abolished the interaction. Binding assay ran in MEG-01 (megakaryocytic leukemia line), not CLL cells; cancer type kept as the paper's CLL context."
   },
   {
    "interaction_id": "CRRA-INT-0006",
@@ -885,11 +885,11 @@ window.CRRA_DATA = {
    "cancer_group": "Pancreatic cancer",
    "interaction_type": "upstream transcriptional activation",
    "regulatory_effect": "activates",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "Promoter characterisation; binding assay not named in abstract",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "miR-34a promoter luciferase reporters in HCT116 p53 WT vs p53-/- cells; truncation or mutation of the conserved p53 binding site (P1 mut) abolished activity and DNA-damage induction",
    "supporting_pmid": "17540599",
    "original_source": "PubMed abstract",
-   "notes": "Direction: TP53 regulates the RNA. Authors state miR-34a is directly transactivated by p53; weaker class because no binding assay is named."
+   "notes": "Direction: TP53 regulates the RNA. Night 1 class was Experimental functional because the abstract names no binding assay. Upgraded on full-text review (Results; Fig. 1B-D; Experimental Procedures, luciferase constructs). ChIP support is cited from published data (Wei et al. 2006), not performed here, and was not counted. Binding-site assay ran in HCT116 (colorectal) and HEK293T cells, not pancreatic cells; cancer type kept as the row's pancreatic context."
   },
   {
    "interaction_id": "CRRA-INT-0013",
@@ -901,11 +901,11 @@ window.CRRA_DATA = {
    "cancer_group": "Brain cancer",
    "interaction_type": "mRNA target repression",
    "regulatory_effect": "represses",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "Functional genetic screen; inhibitors raised p27(Kip1); binding assay not named in abstract",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "Luciferase reporter with p27 (CDKN1B) 3'UTR in MCF-7 cells; miR-221 repression lost with both predicted sites mutated (DM) and with seed-mutated miR-221",
    "supporting_pmid": "17627278",
    "original_source": "PubMed abstract",
-   "notes": ""
+   "notes": "Upgraded on full-text review (Results; Fig. 3B-C; Materials and methods, 'Luciferase assay'): miR-221 tested individually against the double-mutant 3'UTR. Binding assay ran in MCF-7 (breast cancer line), not glioblastoma cells; cancer type kept as the paper's glioblastoma context."
   },
   {
    "interaction_id": "CRRA-INT-0014",
@@ -917,11 +917,11 @@ window.CRRA_DATA = {
    "cancer_group": "Brain cancer",
    "interaction_type": "mRNA target repression",
    "regulatory_effect": "represses",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "Functional genetic screen; inhibitors raised p27(Kip1); binding assay not named in abstract",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "Luciferase reporter with p27 (CDKN1B) 3'UTR in MCF-7 cells; miR-222 repression lost with both predicted sites mutated (DM) and with seed-mutated miR-222",
    "supporting_pmid": "17627278",
    "original_source": "PubMed abstract",
-   "notes": ""
+   "notes": "Upgraded on full-text review (Results; Fig. 3B-C; Materials and methods, 'Luciferase assay'): miR-222 tested individually against the double-mutant 3'UTR. Binding assay ran in MCF-7 (breast cancer line), not glioblastoma cells; cancer type kept as the paper's glioblastoma context."
   },
   {
    "interaction_id": "CRRA-INT-0015",
@@ -1129,7 +1129,7 @@ window.CRRA_DATA = {
    "experimental_method": "Reported direct target; assay not named in abstract",
    "supporting_pmid": "18381893",
    "original_source": "PubMed abstract",
-   "notes": "Authors state miR-200 directly targets ZEB1/ZEB2; weaker class because no assay is named. Family referred to collectively; recorded per member. Also profiled across the NCI60 panel. Paper carries a 2009 erratum."
+   "notes": "Authors state miR-200 directly targets ZEB1/ZEB2; weaker class because no assay is named. Family referred to collectively; recorded per member. Also profiled across the NCI60 panel. Paper carries a 2009 erratum. Full-text review: not upgraded. Only miR-200c was tested against site-mutant reporters (Fig. 3C); seed-sharing with miR-200c is not a performed experiment."
   },
   {
    "interaction_id": "CRRA-INT-0028",
@@ -1145,7 +1145,7 @@ window.CRRA_DATA = {
    "experimental_method": "Reported direct target; assay not named in abstract",
    "supporting_pmid": "18381893",
    "original_source": "PubMed abstract",
-   "notes": "Authors state miR-200 directly targets ZEB1/ZEB2; weaker class because no assay is named. Family referred to collectively; recorded per member. Also profiled across the NCI60 panel. Paper carries a 2009 erratum."
+   "notes": "Authors state miR-200 directly targets ZEB1/ZEB2; weaker class because no assay is named. Family referred to collectively; recorded per member. Also profiled across the NCI60 panel. Paper carries a 2009 erratum. Full-text review: not upgraded. Only miR-200c was tested against site-mutant reporters (Fig. 3C); seed-sharing with miR-200c is not a performed experiment."
   },
   {
    "interaction_id": "CRRA-INT-0029",
@@ -1157,11 +1157,11 @@ window.CRRA_DATA = {
    "cancer_group": "Ovarian cancer",
    "interaction_type": "mRNA target repression",
    "regulatory_effect": "represses",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "Reported direct target; assay not named in abstract",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "Renilla luciferase reporter with human ZEB1 3'UTR in 293T cells; miR-200c mimic repression abolished by mutation of all five miR-200b/c/429 sites",
    "supporting_pmid": "18381893",
    "original_source": "PubMed abstract",
-   "notes": "Authors state miR-200 directly targets ZEB1/ZEB2; weaker class because no assay is named. Family referred to collectively; recorded per member. Also profiled across the NCI60 panel. Paper carries a 2009 erratum."
+   "notes": "Upgraded on full-text review (Results, Fig. 3C; Materials and Methods, 'Luciferase assays'): wild-type vs mutant ZEB1 3'UTR, mutant completely resistant to miR-200c. Binding assay ran in 293T (non-cancer) cells, not ovarian cells; cancer type kept as the paper's ovarian context. Endogenous targeting also supported by pan-miR-200 LNA inhibitor de-repression in HCT116 (Fig. 3D). Paper carries a 2009 erratum."
   },
   {
    "interaction_id": "CRRA-INT-0030",
@@ -1177,7 +1177,7 @@ window.CRRA_DATA = {
    "experimental_method": "Reported direct target; assay not named in abstract",
    "supporting_pmid": "18381893",
    "original_source": "PubMed abstract",
-   "notes": "Authors state miR-200 directly targets ZEB1/ZEB2; weaker class because no assay is named. Family referred to collectively; recorded per member. Also profiled across the NCI60 panel. Paper carries a 2009 erratum."
+   "notes": "Authors state miR-200 directly targets ZEB1/ZEB2; weaker class because no assay is named. Family referred to collectively; recorded per member. Also profiled across the NCI60 panel. Paper carries a 2009 erratum. Full-text review: not upgraded. Only miR-200c was tested against site-mutant reporters (Fig. 3C); seed-sharing with miR-200c is not a performed experiment."
   },
   {
    "interaction_id": "CRRA-INT-0031",
@@ -1193,7 +1193,7 @@ window.CRRA_DATA = {
    "experimental_method": "Reported direct target; assay not named in abstract",
    "supporting_pmid": "18381893",
    "original_source": "PubMed abstract",
-   "notes": "Authors state miR-200 directly targets ZEB1/ZEB2; weaker class because no assay is named. Family referred to collectively; recorded per member. Also profiled across the NCI60 panel. Paper carries a 2009 erratum."
+   "notes": "Authors state miR-200 directly targets ZEB1/ZEB2; weaker class because no assay is named. Family referred to collectively; recorded per member. Also profiled across the NCI60 panel. Paper carries a 2009 erratum. Full-text review: not upgraded. Only miR-200c was tested against site-mutant reporters (Fig. 3C); seed-sharing with miR-200c is not a performed experiment."
   },
   {
    "interaction_id": "CRRA-INT-0032",
@@ -1209,7 +1209,7 @@ window.CRRA_DATA = {
    "experimental_method": "Reported direct target; assay not named in abstract",
    "supporting_pmid": "18381893",
    "original_source": "PubMed abstract",
-   "notes": "Authors state miR-200 directly targets ZEB1/ZEB2; weaker class because no assay is named. Family referred to collectively; recorded per member. Also profiled across the NCI60 panel. Paper carries a 2009 erratum."
+   "notes": "Authors state miR-200 directly targets ZEB1/ZEB2; weaker class because no assay is named. Family referred to collectively; recorded per member. Also profiled across the NCI60 panel. Paper carries a 2009 erratum. Full-text review: not upgraded. Only miR-200c was tested against site-mutant reporters (Fig. 3C); seed-sharing with miR-200c is not a performed experiment."
   },
   {
    "interaction_id": "CRRA-INT-0033",
@@ -1225,7 +1225,7 @@ window.CRRA_DATA = {
    "experimental_method": "Reported direct target; assay not named in abstract",
    "supporting_pmid": "18381893",
    "original_source": "PubMed abstract",
-   "notes": "Authors state miR-200 directly targets ZEB1/ZEB2; weaker class because no assay is named. Family referred to collectively; recorded per member. Also profiled across the NCI60 panel. Paper carries a 2009 erratum."
+   "notes": "Authors state miR-200 directly targets ZEB1/ZEB2; weaker class because no assay is named. Family referred to collectively; recorded per member. Also profiled across the NCI60 panel. Paper carries a 2009 erratum. Full-text review: not upgraded. Only miR-200c was tested against site-mutant reporters (Fig. 3C); seed-sharing with miR-200c is not a performed experiment."
   },
   {
    "interaction_id": "CRRA-INT-0034",
@@ -1237,11 +1237,11 @@ window.CRRA_DATA = {
    "cancer_group": "Ovarian cancer",
    "interaction_type": "mRNA target repression",
    "regulatory_effect": "represses",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "Reported direct target; assay not named in abstract",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "Renilla luciferase reporter with human ZEB2 3'UTR in 293T cells; miR-200c mimic repression abolished by mutation of all five miR-200b/c/429 sites",
    "supporting_pmid": "18381893",
    "original_source": "PubMed abstract",
-   "notes": "Authors state miR-200 directly targets ZEB1/ZEB2; weaker class because no assay is named. Family referred to collectively; recorded per member. Also profiled across the NCI60 panel. Paper carries a 2009 erratum."
+   "notes": "Upgraded on full-text review (Results, Fig. 3C; Materials and Methods, 'Luciferase assays'): wild-type vs mutant ZEB2 3'UTR, mutant completely resistant to miR-200c. Binding assay ran in 293T (non-cancer) cells, not ovarian cells; cancer type kept as the paper's ovarian context. Endogenous targeting also supported by pan-miR-200 LNA inhibitor de-repression in HCT116 (Fig. 3D). Paper carries a 2009 erratum."
   },
   {
    "interaction_id": "CRRA-INT-0035",
@@ -1257,7 +1257,7 @@ window.CRRA_DATA = {
    "experimental_method": "Reported direct target; assay not named in abstract",
    "supporting_pmid": "18381893",
    "original_source": "PubMed abstract",
-   "notes": "Authors state miR-200 directly targets ZEB1/ZEB2; weaker class because no assay is named. Family referred to collectively; recorded per member. Also profiled across the NCI60 panel. Paper carries a 2009 erratum."
+   "notes": "Authors state miR-200 directly targets ZEB1/ZEB2; weaker class because no assay is named. Family referred to collectively; recorded per member. Also profiled across the NCI60 panel. Paper carries a 2009 erratum. Full-text review: not upgraded. Only miR-200c was tested against site-mutant reporters (Fig. 3C); seed-sharing with miR-200c is not a performed experiment."
   },
   {
    "interaction_id": "CRRA-INT-0036",
@@ -1273,7 +1273,7 @@ window.CRRA_DATA = {
    "experimental_method": "Reported direct target; assay not named in abstract",
    "supporting_pmid": "18381893",
    "original_source": "PubMed abstract",
-   "notes": "Authors state miR-200 directly targets ZEB1/ZEB2; weaker class because no assay is named. Family referred to collectively; recorded per member. Also profiled across the NCI60 panel. Paper carries a 2009 erratum."
+   "notes": "Authors state miR-200 directly targets ZEB1/ZEB2; weaker class because no assay is named. Family referred to collectively; recorded per member. Also profiled across the NCI60 panel. Paper carries a 2009 erratum. Full-text review: not upgraded. Only miR-200c was tested against site-mutant reporters (Fig. 3C); seed-sharing with miR-200c is not a performed experiment."
   },
   {
    "interaction_id": "CRRA-INT-0037",
@@ -1285,11 +1285,11 @@ window.CRRA_DATA = {
    "cancer_group": "Breast cancer",
    "interaction_type": "mRNA target repression",
    "regulatory_effect": "represses",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "Metastasis suppression through targeting; assay not named in abstract",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "Dual-luciferase (psiCHECK-2) reporter with 60-bp SOX4 3'UTR segment in LM2 breast cancer cells; mutation of the miR-335 seed target site (TCTTGG to TGAGGG) raised reporter expression",
    "supporting_pmid": "18185580",
    "original_source": "PubMed abstract",
-   "notes": "Weaker class: abstract says \"through targeting of\" without naming a binding assay."
+   "notes": "Night 1 class was Experimental functional because the abstract names no binding assay. Upgraded on full-text review (Results, Fig. 4d; Methods, reporter construction): wild-type vs seed-site-mutant SOX4 3'UTR segment, plus miR-335 antagomir."
   },
   {
    "interaction_id": "CRRA-INT-0038",
@@ -1305,7 +1305,7 @@ window.CRRA_DATA = {
    "experimental_method": "Metastasis suppression through targeting; assay not named in abstract",
    "supporting_pmid": "18185580",
    "original_source": "PubMed abstract",
-   "notes": "Weaker class: abstract says \"through targeting of\" without naming a binding assay."
+   "notes": "Weaker class: abstract says \"through targeting of\" without naming a binding assay. Full-text review: not upgraded. TNC was tested only with a wild-type 3'UTR reporter compared across LM2/MDA-MB-231 cells and with antagomir (Fig. 4b-c); no site mutation, and the authors call TNC only 'possibly' a direct target."
   },
   {
    "interaction_id": "CRRA-INT-0039",
@@ -1349,11 +1349,11 @@ window.CRRA_DATA = {
    "cancer_group": "Breast cancer",
    "interaction_type": "mRNA target repression",
    "regulatory_effect": "represses",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "Reported direct target; assay not named in abstract",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "Luciferase reporter with CDH1 3'UTR in SUM149 cells; miR-9 repression lost when the miR-9 seed-pairing site was mutated",
    "supporting_pmid": "20173740",
    "original_source": "PubMed abstract",
-   "notes": "Authors state miR-9 directly targets CDH1; weaker class because no assay is named. Recorded against MIR9-3, the locus the abstract names."
+   "notes": "Upgraded on full-text review (Results; Fig. 1a, 1d): miR-9 reduced wild-type but not seed-site-mutant CDH1 3'UTR reporter activity. Mature miR-9 is identical from mir-9-1/-2/-3 and the expression construct's precursor is not stated in the main text; recorded against MIR9-3, the locus the paper ties to MYC/MYCN."
   },
   {
    "interaction_id": "CRRA-INT-0042",
@@ -1365,11 +1365,11 @@ window.CRRA_DATA = {
    "cancer_group": "Breast cancer",
    "interaction_type": "upstream transcriptional activation",
    "regulatory_effect": "activates",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "MYC binds the mir-9-3 locus; binding assay not named in abstract",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "ChIP-on-chip: endogenous MYC occupancy at a CpG island with canonical CACGTG sites in the mir-9-3 locus",
    "supporting_pmid": "20173740",
    "original_source": "PubMed abstract",
-   "notes": "Direction: MYC regulates the RNA. Weaker class: binding reported but assay not named."
+   "notes": "Direction: MYC regulates the RNA. Upgraded on full-text review (Results; Fig. 5d): ChIP-on-chip showed endogenous MYC bound at the mir-9-3 locus; ChIP treated as the physical-binding equivalent for a transcription-factor row. Binding assay ran in neuroblastoma cells (Kelly, SJ-NB-12), not breast cells; cancer type kept as the paper's breast cancer context."
   },
   {
    "interaction_id": "CRRA-INT-0043",
@@ -1381,11 +1381,11 @@ window.CRRA_DATA = {
    "cancer_group": "Breast cancer",
    "interaction_type": "upstream transcriptional activation",
    "regulatory_effect": "activates",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "MYCN binds the mir-9-3 locus; binding assay not named in abstract",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "ChIP-on-chip: endogenous MYCN occupancy at a CpG island with canonical CACGTG sites in the mir-9-3 locus",
    "supporting_pmid": "20173740",
    "original_source": "PubMed abstract",
-   "notes": "Direction: MYCN regulates the RNA. Weaker class: binding reported but assay not named."
+   "notes": "Direction: MYCN regulates the RNA. Upgraded on full-text review (Results; Fig. 5d): ChIP-on-chip showed endogenous MYCN bound at the mir-9-3 locus; ChIP treated as the physical-binding equivalent for a transcription-factor row. Binding assay ran in neuroblastoma cells (Kelly, SJ-NB-12), not breast cells; cancer type kept as the paper's breast cancer context."
   },
   {
    "interaction_id": "CRRA-INT-0044",
@@ -1525,11 +1525,11 @@ window.CRRA_DATA = {
    "cancer_group": "Not specified",
    "interaction_type": "mRNA target repression",
    "regulatory_effect": "represses",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "Reported direct target; assay not named in abstract",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "Luciferase reporter with c-Myc 3'UTR in 293T cells; repression abolished by deletion of the miR-145 binding site (Luc-c-Myc-UTR-d) and by seed-mutant miR-145",
    "supporting_pmid": "19202062",
    "original_source": "PubMed abstract",
-   "notes": "Authors state direct targeting; weaker class because no assay is named. Tumour cell lines; cancer type not named."
+   "notes": "Night 1 class was Experimental functional because the abstract names no binding assay. Upgraded on full-text review (Results, 'c-Myc Is a Direct Target of miR-145'; Fig. 4E-F). Binding assay ran in 293T (non-cancer) cells; cancer type left as 'Not specified in abstract', the row's existing value."
   },
   {
    "interaction_id": "CRRA-INT-0053",
@@ -1541,11 +1541,11 @@ window.CRRA_DATA = {
    "cancer_group": "Not specified",
    "interaction_type": "upstream transcriptional activation",
    "regulatory_effect": "activates",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "p53 response element in the miR-145 promoter; binding assay not named in abstract",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "miR-145 promoter luciferase reporter: deletion or mutation of p53RE-2 abolished p53 induction; ChIP showed p53 binding at p53RE-2 (p53-transfected cells and doxorubicin-treated HCT-116 p53+/+ vs -/-)",
    "supporting_pmid": "19202062",
    "original_source": "PubMed abstract",
-   "notes": "Direction: TP53 regulates the RNA. Weaker class: binding assay not named."
+   "notes": "Direction: TP53 regulates the RNA. Upgraded on full-text review (Results; Fig. 3A, 3D-E): site-mutant promoter reporter plus ChIP, treated as the physical-binding equivalent for a transcription-factor row."
   },
   {
    "interaction_id": "CRRA-INT-0054",
@@ -1573,11 +1573,11 @@ window.CRRA_DATA = {
    "cancer_group": "Not specified",
    "interaction_type": "protein level maintenance",
    "regulatory_effect": "activates",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "PVT1 ablation reduced MYC protein and tumorigenicity; mouse chromosome engineering",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "RNA immunoprecipitation with anti-MYC antibody (vs IgG) followed by RT-PCR recovers PVT1 RNA in SK-BR-3 cells; supported by RNA-FISH/immunofluorescence nuclear co-localisation",
    "supporting_pmid": "25043044",
    "original_source": "PubMed abstract",
-   "notes": "PVT1 gain required for high MYC protein in 8q24-amplified cells. Ablation done in HCT116; abstract frames the finding across 8q24-gain cancers, so no single cancer type recorded."
+   "notes": "PVT1 gain required for high MYC protein in 8q24-amplified cells. Ablation done in HCT116; abstract frames the finding across 8q24-gain cancers, so no single cancer type recorded. Upgraded on full-text review (Results; Fig. 3i-j). Authors say PVT1 and MYC interact 'directly or indirectly': the IP shows physical association, not necessarily direct contact. IP ran in SK-BR-3 breast cancer cells."
   },
   {
    "interaction_id": "CRRA-INT-0056",
@@ -1589,11 +1589,11 @@ window.CRRA_DATA = {
    "cancer_group": "Prostate cancer",
    "interaction_type": "upstream transcriptional repression",
    "regulatory_effect": "represses",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "PCAT-1 is a PRC2 target; assay not named in abstract",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "SUZ12 ChIP-PCR showing SUZ12 binding at the PCAT-1 promoter ~1 kb upstream of the TSS in VCaP cells",
    "supporting_pmid": "21804560",
    "original_source": "PubMed abstract",
-   "notes": "Direction: PRC2 represses the RNA. Protein complex, no single gene."
+   "notes": "Direction: PRC2 represses the RNA. Protein complex, no single gene. Night 1 class was Experimental functional because the abstract names no assay. Upgraded on full-text review (Results; Fig. 4f; Methods, 'Chromatin immunoprecipitation'): ChIP treated as the physical-binding equivalent for an upstream regulator row. Separately, SUZ12 RIP shows PCAT-1 RNA binding SUZ12 (Supplementary Fig. 23a-b), which is not this row's direction."
   },
   {
    "interaction_id": "CRRA-INT-0057",
@@ -1605,11 +1605,11 @@ window.CRRA_DATA = {
    "cancer_group": "Prostate cancer",
    "interaction_type": "chromatin regulator antagonism",
    "regulatory_effect": "",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "Gain/loss of function in vitro and in vivo; SChLAP1 antagonises genome-wide SWI/SNF localisation",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "SNF5 RIP in 22Rv1, LNCaP and SChLAP1-overexpressing RWPE cells; ChIRP pulldown of SChLAP1 RNA recovers SNF5 protein in RWPE-SChLAP1 cells",
    "supporting_pmid": "24076601",
    "original_source": "PubMed abstract",
-   "notes": "Protein complex. SMARCB1 is named in the full text but not the abstract, so no gene ID is asserted. Effect left empty: \"antagonises localisation\" is not one of the effect terms."
+   "notes": "Protein complex. SMARCB1 is named in the full text but not the abstract, so no gene ID is asserted. Effect left empty: \"antagonises localisation\" is not one of the effect terms. Upgraded on full-text review (Results; Fig. 4b-d, Supplementary Fig. 12h). Some RIP/ChIRP ran in RWPE (benign prostate epithelium) with SChLAP1 overexpressed; endogenous RIP ran in 22Rv1 and LNCaP prostate cancer cells."
   },
   {
    "interaction_id": "CRRA-INT-0058",
@@ -1622,10 +1622,10 @@ window.CRRA_DATA = {
    "interaction_type": "RNA-protein binding",
    "regulatory_effect": "",
    "evidence_class": "Direct experimental",
-   "experimental_method": "CBX7 (PRC1) binds ANRIL; structure-guided disruption of RNA binding",
+   "experimental_method": "RNA-ChIP of CBX7 with endogenous ANRIL in PC3 cells (Fig. 3a); RNA EMSA of biotinylated ANRIL with purified CBX7/PRC1 (Fig. 3d-e)",
    "supporting_pmid": "20541999",
    "original_source": "PubMed abstract",
-   "notes": "ANRIL is CDKN2B-AS1."
+   "notes": "ANRIL is CDKN2B-AS1. Full-text review: class confirmed - modified RNA-ChIP of CBX7 with endogenous ANRIL in PC3 cells (Fig. 3a) and RNA EMSA of biotinylated ANRIL with purified CBX7/PRC1 (Fig. 3d-e)."
   },
   {
    "interaction_id": "CRRA-INT-0059",
@@ -1641,7 +1641,7 @@ window.CRRA_DATA = {
    "experimental_method": "Disrupting ANRIL binding impairs CBX7 repression of the INK4b/ARF/INK4a locus",
    "supporting_pmid": "20541999",
    "original_source": "PubMed abstract",
-   "notes": "ANRIL is CDKN2B-AS1. INK4b = CDKN2B."
+   "notes": "ANRIL is CDKN2B-AS1. INK4b = CDKN2B. Full-text review: not upgraded. Evidence is CBX7/EZH2/H3K27me3 ChIP at the locus after ANRIL perturbation (Fig. 2d, 3); no assay tests ANRIL itself binding the locus."
   },
   {
    "interaction_id": "CRRA-INT-0060",
@@ -1657,7 +1657,7 @@ window.CRRA_DATA = {
    "experimental_method": "Disrupting ANRIL binding impairs CBX7 repression of the INK4b/ARF/INK4a locus",
    "supporting_pmid": "20541999",
    "original_source": "PubMed abstract",
-   "notes": "ANRIL is CDKN2B-AS1. ARF and INK4a are both CDKN2A products."
+   "notes": "ANRIL is CDKN2B-AS1. ARF and INK4a are both CDKN2A products. Full-text review: not upgraded. Evidence is CBX7/EZH2/H3K27me3 ChIP at the locus after ANRIL perturbation (Fig. 2d, 3); no assay tests ANRIL itself binding the locus."
   },
   {
    "interaction_id": "CRRA-INT-0061",
@@ -1673,7 +1673,7 @@ window.CRRA_DATA = {
    "experimental_method": "RNA immunoprecipitation (RIP)",
    "supporting_pmid": "21151178",
    "original_source": "PubMed abstract",
-   "notes": "ANRIL is CDKN2B-AS1. Cell lines; cancer type not named."
+   "notes": "ANRIL is CDKN2B-AS1. Cell lines; cancer type not named. Full-text review: class confirmed - SUZ12 RIP enriched ANRIL over IgG/YY1 controls and U1 RNA (Results; Figure 4d)."
   },
   {
    "interaction_id": "CRRA-INT-0062",
@@ -1689,7 +1689,7 @@ window.CRRA_DATA = {
    "experimental_method": "ANRIL depletion disrupted SUZ12 binding at p15INK4B and raised p15",
    "supporting_pmid": "21151178",
    "original_source": "PubMed abstract",
-   "notes": "ANRIL is CDKN2B-AS1. Abstract reports no effect on p16/p14 (CDKN2A), so no CDKN2A row is recorded for this paper."
+   "notes": "ANRIL is CDKN2B-AS1. Abstract reports no effect on p16/p14 (CDKN2A), so no CDKN2A row is recorded for this paper. Full-text review: not upgraded. Evidence is SUZ12 ChIP-qPCR at p15INK4B after ANRIL silencing (Figure 4c); no assay tests ANRIL itself at the locus."
   },
   {
    "interaction_id": "CRRA-INT-0063",
@@ -1781,11 +1781,11 @@ window.CRRA_DATA = {
    "cancer_group": "Prostate cancer",
    "interaction_type": "upstream transcriptional regulation",
    "regulatory_effect": "",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "ChIP-seq and RNA-seq identify NEAT1 as ERalpha-regulated",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "ERalpha ChIP-seq peaks at the NEAT1 promoter validated by ERalpha ChIP-qPCR in VCaP, VCaP-ERalpha and NCI-H660 cells; NEAT1 promoter luciferase reporter responds to ERalpha/E2",
    "supporting_pmid": "25415230",
    "original_source": "PubMed abstract",
-   "notes": "Direction: ESR1 regulates the RNA. Effect left empty: the notes record \"regulated\" without stating direction."
+   "notes": "Direction: ESR1 regulates the RNA. Effect left empty: the notes record \"regulated\" without stating direction. Upgraded on full-text review (Results; Fig. 2d-g, Supplementary Fig. 2f-g): ChIP treated as the physical-binding equivalent for an upstream regulator row."
   },
   {
    "interaction_id": "CRRA-INT-0069",
@@ -1801,7 +1801,7 @@ window.CRRA_DATA = {
    "experimental_method": "Knockdown reduced MYC promoter-enhancer looping",
    "supporting_pmid": "24662484",
    "original_source": "PubMed abstract",
-   "notes": "Isoform CCAT1-L, transcribed from a super-enhancer 515 kb upstream of MYC; classed as lncRNA following the authors (eRNA-like). Paper carries a 2014 erratum."
+   "notes": "Isoform CCAT1-L, transcribed from a super-enhancer 515 kb upstream of MYC; classed as lncRNA following the authors (eRNA-like). Paper carries a 2014 erratum. Full-text review: not upgraded. Looping evidence is 3C after CCAT1-L knockdown (Fig. 5); no assay tests CCAT1-L RNA binding the MYC locus directly."
   },
   {
    "interaction_id": "CRRA-INT-0070",
@@ -1813,11 +1813,11 @@ window.CRRA_DATA = {
    "cancer_group": "Colorectal cancer",
    "interaction_type": "RNA-protein binding",
    "regulatory_effect": "",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "Interaction with CTCF reported; assay not named in abstract",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "Biotin-labelled RNA pulldown of CCAT1-L fragments from HT29 nuclear extract (one fragment binds CTCF), and UV-crosslinked RIP with anti-CTCF in HT29 cells",
    "supporting_pmid": "24662484",
    "original_source": "PubMed abstract",
-   "notes": "Isoform CCAT1-L. Weaker class: interaction stated without a named assay."
+   "notes": "Isoform CCAT1-L. Night 1 class was Experimental functional because the abstract names no assay. Upgraded on full-text review (Results, 'CCAT1-L interacts with CTCF and modulates CTCF binding to chromatin at the MYC locus'; Fig. 6D-E)."
   },
   {
    "interaction_id": "CRRA-INT-0071",
@@ -1893,11 +1893,11 @@ window.CRRA_DATA = {
    "cancer_group": "Ovarian cancer",
    "interaction_type": "RNA-protein binding",
    "regulatory_effect": "stabilises",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "Associates with BMI1 and regulates its stability; assay not named in abstract",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "Biotinylated full-length FAL1 RNA pulldown from A2780 nuclear lysate (mass spec, BMI1 western; antisense and HOTAIR-fragment controls) and BMI1 RIP-qPCR",
    "supporting_pmid": "25203321",
    "original_source": "PubMed abstract",
-   "notes": "FAL1 is FALEC. Weaker class: association stated without a named assay."
+   "notes": "FAL1 is FALEC. Night 1 class was Experimental functional because the abstract names no assay. Upgraded on full-text review (Results, 'FAL1 associates with BMI1 protein and regulates its stability'; Fig. 4A-D)."
   },
   {
    "interaction_id": "CRRA-INT-0076",
@@ -1913,7 +1913,7 @@ window.CRRA_DATA = {
    "experimental_method": "FAL1 represses p21; siRNA inhibited tumour growth",
    "supporting_pmid": "25203321",
    "original_source": "PubMed abstract",
-   "notes": "FAL1 is FALEC."
+   "notes": "FAL1 is FALEC. Full-text review: not upgraded. Repression of CDKN1A is shown through BMI1 ChIP and ubH2AK119 ChIP at the promoter after FAL1 knockdown (Fig. 5D-E, 6B), i.e. via BMI1; no assay tests FAL1 at the CDKN1A locus."
   },
   {
    "interaction_id": "CRRA-INT-0077",
@@ -1929,7 +1929,7 @@ window.CRRA_DATA = {
    "experimental_method": "PTENP1 regulates cellular PTEN levels by competing for miRNA binding",
    "supporting_pmid": "20577206",
    "original_source": "PubMed abstract",
-   "notes": "Abstract extends the mechanism to KRAS/KRAS1P; KRAS1P has no RNA record here, so that pair is not recorded."
+   "notes": "Abstract extends the mechanism to KRAS/KRAS1P; KRAS1P has no RNA record here, so that pair is not recorded. Full-text review: not upgraded. A site-mutant chimeric luciferase reporter shows miRNA binding to the PTENP1 3'UTR (Supplementary Fig. 4a-c), but PTENP1 acting on PTEN is a ceRNA relationship, indirect by definition; that assay would support a PTENP1-miRNA row, not this one."
   },
   {
    "interaction_id": "CRRA-INT-0078",
@@ -1993,7 +1993,7 @@ window.CRRA_DATA = {
    "experimental_method": "KLK3e facilitates KLK3 enhancer-KLK2 promoter interaction and enhances KLK2 transcription",
    "supporting_pmid": "24778216",
    "original_source": "PubMed abstract",
-   "notes": ""
+   "notes": "Full-text review: not upgraded. Looping evidence is 3C-qPCR after KLK3e knockdown (Fig. 2D) and a KLK2-promoter reporter with/without KLK3e sequence (Fig. 4A) - functional, not a test of KLK3e binding the KLK2 locus."
   },
   {
    "interaction_id": "CRRA-INT-0082",
@@ -2009,7 +2009,7 @@ window.CRRA_DATA = {
    "experimental_method": "KLK3e is androgen-induced via AR",
    "supporting_pmid": "24778216",
    "original_source": "PubMed abstract",
-   "notes": "Direction: AR regulates the RNA."
+   "notes": "Direction: AR regulates the RNA. Full-text review: not upgraded. AR occupancy at the KLK3 enhancer is shown only from published ChIP-seq (Fig. 1A, ref. 19), not an assay performed here; the paper's own ChIP is at the KLK2 promoter."
   },
   {
    "interaction_id": "CRRA-INT-0083",
@@ -2021,11 +2021,11 @@ window.CRRA_DATA = {
    "cancer_group": "Prostate cancer",
    "interaction_type": "RNA scaffolding",
    "regulatory_effect": "",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "KLK3e carries ARE III, required for AR-MED1 interaction; scaffolds the AR-associated complex",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "RIP-qPCR with AR and Med1 antibodies in DHT-treated LNCaP cells; DHT-induced binding to the 5' core enhancer segment (S1) of sense KLK3e",
    "supporting_pmid": "24778216",
    "original_source": "PubMed abstract",
-   "notes": "Protein complex, no single gene."
+   "notes": "Protein complex, no single gene. Upgraded on full-text review (Results, 'KLK3e interacts with AR and Med1', Fig. S2 I-K; Experimental Procedures, 'RIP Assay'). Figure panels are supplementary, but the assay is reported in the main Results."
   },
   {
    "interaction_id": "CRRA-INT-0084",
@@ -2037,11 +2037,11 @@ window.CRRA_DATA = {
    "cancer_group": "Not specified",
    "interaction_type": "enhancer activation",
    "regulatory_effect": "activates",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "LED knockdown reduced CDKN1A enhancer induction and cell-cycle arrest",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "ChIRP-seq with odd/even antisense probe pools in MCF-7 cells, validated by ChIRP-qPCR at the CDKN1A intron-1 enhancer (p21e)",
    "supporting_pmid": "25813522",
    "original_source": "PubMed abstract",
-   "notes": "LED is SMIM10L2A (alias LINC00086)."
+   "notes": "LED is SMIM10L2A (alias LINC00086). Upgraded on full-text review (Results; Supplementary Fig. 4c, 4h; Methods, 'ChIRP'): LED RNA physically associates with the p21 enhancer. ChIRP treated as the RNA-chromatin binding equivalent. Cancer type left as the row's existing value."
   },
   {
    "interaction_id": "CRRA-INT-0085",
@@ -2053,11 +2053,11 @@ window.CRRA_DATA = {
    "cancer_group": "Not specified",
    "interaction_type": "upstream transcriptional activation",
    "regulatory_effect": "activates",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "LED is p53-induced",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "p53 ChIP-qPCR at the LED locus (with published p53 ChIP-seq); LED exon-2 p53 response element drives p53-dependent luciferase activity",
    "supporting_pmid": "25813522",
    "original_source": "PubMed abstract",
-   "notes": "Direction: TP53 regulates the RNA. LED is SMIM10L2A."
+   "notes": "Direction: TP53 regulates the RNA. LED is SMIM10L2A. Upgraded on full-text review (Results; Fig. 2e-f, Supplementary Fig. 2b): ChIP treated as the physical-binding equivalent for a transcription-factor row."
   },
   {
    "interaction_id": "CRRA-INT-0086",
@@ -2073,7 +2073,7 @@ window.CRRA_DATA = {
    "experimental_method": "SNAI1e depletion impaired TGF-beta-induced EMT, migration, extravasation, stemness and chemoresistance",
    "supporting_pmid": "40133308",
    "original_source": "PubMed abstract",
-   "notes": "SNAI1e is also called SCREEM2."
+   "notes": "SNAI1e is also called SCREEM2. Full-text review: not upgraded. 4C-seq from the SNAI1e DNA locus (Fig. 5a) shows enhancer-promoter contact, not SNAI1e RNA binding; remaining evidence is perturbation (GapmeR, siRNA, CRISPRi; Fig. 4)."
   },
   {
    "interaction_id": "CRRA-INT-0087",
@@ -2085,11 +2085,11 @@ window.CRRA_DATA = {
    "cancer_group": "Breast cancer",
    "interaction_type": "RNA-protein binding",
    "regulatory_effect": "",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "Binds BRD4 and strengthens its enhancer enrichment; assay not named in abstract",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "BRD4 RIP-qPCR in MDA-MB-231; biotinylated SNAI1e pulldown of BRD4 (HEK293T) with fragment mapping to the 5' T1 region; in vitro RIP and pulldown with recombinant BRD4-BD1/2",
    "supporting_pmid": "40133308",
    "original_source": "PubMed abstract",
-   "notes": "Weaker class: binding stated without a named assay."
+   "notes": "Weaker class: binding stated without a named assay. Upgraded on full-text review (Results, 'SNAI1e directly interacts with BRD4'; Fig. 6a-g). Some pulldowns ran in HEK293T (non-cancer); the endogenous RIP ran in MDA-MB-231 breast cancer cells."
   },
   {
    "interaction_id": "CRRA-INT-0088",
@@ -2101,11 +2101,11 @@ window.CRRA_DATA = {
    "cancer_group": "Pancreatic cancer",
    "interaction_type": "RNA-protein binding",
    "regulatory_effect": "",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "Interacts with YEATS2 (ATAC complex); assay not named in abstract",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "UV-RIP of YEATS2 with qRT-PCR for MYC -490-kb eRNA in TNF-alpha-stimulated MIAPaCa-2 and AsPC-1 cells",
    "supporting_pmid": "40216980",
    "original_source": "PubMed abstract",
-   "notes": "Weaker class: interaction stated without a named assay. Also elevated in chronic pancreatitis."
+   "notes": "Weaker class: interaction stated without a named assay. Also elevated in chronic pancreatitis. Upgraded on full-text review (Results; Fig. 3A-B): the binding is specific to the MYC -490-kb eRNA; the -425-kb eRNA showed no TNF-dependent increase (EV3D)."
   },
   {
    "interaction_id": "CRRA-INT-0089",
@@ -2121,7 +2121,7 @@ window.CRRA_DATA = {
    "experimental_method": "MYC eRNA increases MYC expression; TNF-alpha dependent",
    "supporting_pmid": "40216980",
    "original_source": "PubMed abstract",
-   "notes": ""
+   "notes": "Full-text review: not upgraded. MYC activation is shown via YEATS2/ATAC recruitment after eRNA perturbation; no assay tests the eRNA binding the MYC locus directly."
   },
   {
    "interaction_id": "CRRA-INT-0090",
@@ -2137,7 +2137,7 @@ window.CRRA_DATA = {
    "experimental_method": "Androgen-activated AR represses IKBKE through HDAC2 interaction with IKBKE-e; ablation enhances anticancer immunity",
    "supporting_pmid": "41542764",
    "original_source": "PubMed abstract",
-   "notes": "Prostate cancer cell and mouse models."
+   "notes": "Prostate cancer cell and mouse models. Full-text review: not upgraded. IKBKE repression shown by ASO knockdown of IKBKE-e (Fig. 4N) and published AR/HDAC2 ChIP-seq (Fig. 4S); no direct eRNA-locus assay."
   },
   {
    "interaction_id": "CRRA-INT-0091",
@@ -2149,11 +2149,11 @@ window.CRRA_DATA = {
    "cancer_group": "Prostate cancer",
    "interaction_type": "RNA-protein binding",
    "regulatory_effect": "",
-   "evidence_class": "Experimental functional",
-   "experimental_method": "HDAC2 interaction with IKBKE-e; assay not named in abstract",
+   "evidence_class": "Direct experimental",
+   "experimental_method": "Biotin-labelled IKBKE-e RNA pulldown from C4-2 lysate with mass spectrometry (HDAC2 the only HDAC detected) and HDAC2 western versus antisense control",
    "supporting_pmid": "41542764",
    "original_source": "PubMed abstract",
-   "notes": "Weaker class: interaction stated without a named assay."
+   "notes": "Weaker class: interaction stated without a named assay. Upgraded on full-text review (Results; Fig. 4O-R)."
   },
   {
    "interaction_id": "CRRA-INT-0092",

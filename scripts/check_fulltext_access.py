@@ -43,6 +43,13 @@ def main():
         r["supporting_pmid"] for r in inter
         if r.get("evidence_class") == "Experimental functional"
     )
+    # Rows already classed Direct experimental still need auditing: a class is
+    # only as good as the assay behind it, and a queue built from provisional
+    # rows alone never looks at them. Two such papers were invisible until now.
+    already_direct = Counter(
+        r["supporting_pmid"] for r in inter
+        if r.get("evidence_class") == "Direct experimental"
+    )
     # Association rows are reviewable too, and a paper that would fix rows in both
     # tables is worth more per read than the interaction count alone suggests.
     assoc_rows = Counter(
@@ -60,7 +67,8 @@ def main():
     def total(pid):
         return upgradable[pid] + assoc_rows[pid]
 
-    pmids = sorted(set(upgradable) | set(assoc_rows), key=lambda p: (-total(p), p))
+    pmids = sorted(set(upgradable) | set(assoc_rows) | set(already_direct),
+                   key=lambda p: (-total(p), p))
     print(f"{len(pmids)} papers carry {sum(total(p) for p in pmids)} provisional rows "
           f"({sum(upgradable.values())} interaction, {sum(assoc_rows.values())} association).")
 
@@ -104,6 +112,7 @@ def main():
             "provisional_rows": upgradable[pid] + assoc_rows.get(pid, 0),
             "interaction_rows": upgradable[pid],
             "association_rows": assoc_rows.get(pid, 0),
+            "direct_rows_to_audit": already_direct.get(pid, 0),
             "year": p.get("year", ""),
             "journal": p.get("journal", ""),
             "title": p.get("title", ""),

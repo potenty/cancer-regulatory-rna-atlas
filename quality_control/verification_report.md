@@ -343,3 +343,54 @@ Both were caught on review of its output, not by the script's own checks.
 The second is worth recording as a process point: the tool reported a column of zeros and
 nothing flagged it. It was found by someone reading the output and asking why a number that
 should have been non-zero was not.
+
+---
+
+# Addendum — full-text review, 2026-11-25/26
+
+31 of 37 papers reviewed against their full texts. **`Direct experimental` rows went from 4 to
+29.** 18 papers yielded at least one upgrade, 9 produced no change, 4 could not be accessed.
+
+The upgrades are real: 26 of the 29 Direct rows now name a specific assay and, in most cases,
+the figure — luciferase reporters whose repression is abolished by site mutation, RIP and
+UV-RIP, ChIP and ChIP-qPCR, ChIRP, RNA EMSA, biotinylated-RNA pulldown with mass spectrometry.
+
+This answers the question the review was run to settle. The evidence column had been 88 of 94
+rows in a single class, which made it almost useless for discriminating. It is now 29 / 63 / 2,
+and filtering on `Direct experimental` returns a meaningful subset.
+
+## What the earlier estimate got wrong
+
+Park 2008 upgraded 2 of 10 rows, and that was read as a sign the whole exercise might not pay.
+It was unrepresentative. Park is a **family paper**: the experiment tested one family member,
+so the other rows could never be promoted. Single-pair papers upgraded at a far higher rate,
+because a paper whose central claim is "RNA X targets gene Y" generally has the reporter assay.
+
+**Family-expanded rows are structurally un-upgradeable.** This is a property of the
+family-expansion convention, not of the literature, and it means a permanent provisional
+floor of roughly 31 rows. It belongs in `limitations.md`.
+
+## Two defects found reviewing the review
+
+1. **A Direct row whose method field was stale.** ANRIL–CBX7 (20541999) was audited and the
+   real assays recorded in `notes` — RNA-ChIP in PC3 cells, RNA EMSA with purified CBX7/PRC1 —
+   but `experimental_method` still carried the pre-review wording. Fields updated out of step.
+   Now synced.
+2. **Direct rows were never audited at all.** `check_fulltext_access.py` built its queue from
+   `Experimental functional` rows, so a paper whose rows were already Direct never entered it.
+   Two papers were invisible this way: 17968323 (miR-21–PDCD4) and 17437991 (let-7a–HMGA2).
+   The second is the weaker: its method reads "dependence on multiple 3'UTR sites; rescue by
+   ORF lacking 3'UTR", which was written from the abstract and has never been checked against
+   the paper. The queue now includes already-Direct papers with a `direct_rows_to_audit` count.
+
+The general point, now seen three times on this project: **the automated checks catch malformed
+data, never wrong data.** Duplicate detection, identifier formats, foreign keys and
+vocabularies all passed throughout. Every substantive error — two misclassified seed rows, a
+column of zeros, a stale method field, an unaudited class — was found by a person reading the
+output and asking whether a number looked right.
+
+## Not accessed
+
+Four papers could not be read: Johnson 2005 (15766527, publisher 403), O'Donnell 2005
+(15944709), and two others. Their rows stay provisional, and that is recorded rather than
+inferred around.
