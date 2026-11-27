@@ -580,6 +580,13 @@
       });
     });
 
+    var built = el("built-date");
+    if (built && DATA._meta && DATA._meta.built) {
+      var d = new Date(DATA._meta.built + "T00:00:00");
+      built.textContent = d.toLocaleDateString("en-GB",
+        { day: "numeric", month: "long", year: "numeric" });
+    }
+
     renderHome();
     renderRnas();
     renderInteractions();
