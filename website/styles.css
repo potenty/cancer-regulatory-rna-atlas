@@ -550,3 +550,14 @@ thead th { white-space: normal; }
   white-space: nowrap;
   cursor: help;
 }
+
+/* A caveat tied to a specific figure: present and legible, but not a warning box. */
+.caveat {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  border-left: 3px solid var(--rule);
+  padding-left: 0.9rem;
+  margin: 0.9rem 0 0;
+  max-width: 80ch;
+}
+.caveat strong { color: var(--navy); }

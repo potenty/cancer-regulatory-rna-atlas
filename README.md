@@ -8,11 +8,13 @@ An independent, evidence-based atlas of regulatory noncoding RNA interactions in
 A method for grading the strength of published evidence behind noncoding RNA–cancer claims, and a
 pilot applying it to 131 curated records across four RNA classes.
 
-It is **not** a comprehensive database and does not try to be. For microRNA–target interactions,
-[miRTarBase](https://mirtarbase.cuhk.edu.cn/) holds over 400,000 curated entries with its own
-validation tiers and is better than this in every way that size matters. What no existing
-resource does is apply **one** evidence rubric across miRNA, lncRNA, eRNA and circRNA, so that
-the classes can be compared on the same scale. That is the gap this pilot was built to test.
+Existing resources each cover one RNA class and each grade evidence their own way:
+[miRTarBase](https://mirtarbase.cuhk.edu.cn/) for microRNA targets, LncRNADisease for lncRNA,
+nothing at all for enhancer RNAs. Those are the places to go for comprehensive coverage of a
+single class.
+
+This atlas does the thing none of them do: it applies **one** evidence rubric across miRNA,
+lncRNA, eRNA and circRNA, so the classes can be read on the same scale.
 
 ## The result
 
@@ -30,13 +32,10 @@ Broken down by RNA class:
 | eRNA | 11 | 4 | 36% |
 | circRNA | 3 | 0 | 0% |
 
-**These classes cannot be distinguished at this sample size.** miRNA and lncRNA are effectively
-identical; eRNA looks lower but 4 of 11 is well within chance of the others. The question the
-pilot was built to ask — whether the evidence base is weaker for some RNA classes than others —
-is not answered here, and would need roughly 50–100 verified rows per class before a difference
-of that size could show up.
-
-That is the honest finding: **the method works, the sample is too small to use it.**
+**Read the row counts, not just the percentages.** miRNA and lncRNA are effectively identical
+here. eRNA looks lower, but 4 of 11 sits within chance of the others, so no difference between
+classes can be claimed at this scale — separating them would take roughly 50–100 verified rows
+each.
 
 ## Contents
 
