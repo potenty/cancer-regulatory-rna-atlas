@@ -394,3 +394,58 @@ output and asking whether a number looked right.
 Four papers could not be read: Johnson 2005 (15766527, publisher 403), O'Donnell 2005
 (15944709), and two others. Their rows stay provisional, and that is recorded rather than
 inferred around.
+
+---
+
+# Addendum — review completed, 2026-11-26
+
+Every accessible paper has now been read. **`Direct experimental`: 28 of 94 interaction rows**,
+up from 4 before the review and down one from the 29 recorded mid-review.
+
+## The downgrade is the most important result in this file
+
+**let-7a–HMGA2 (17437991) came down from `Direct experimental` to `Experimental functional`.**
+The paper does contain a proper binding assay — luciferase reporters with HMGA2 3'UTR sites
+mutated one at a time, six of eight responding. But it was run with a **let-7b/let-7e mixture**,
+described in the figure legend as representative of all let-7 variants. let-7a was never tested.
+Carrying the result to let-7a would rest on the shared seed, which is a prediction, not a
+performed experiment — the same rule that held MIR200B and MIR429 back at Park.
+
+A number going down because somebody checked is worth more than a number going up because
+nobody did. This row had been `Direct experimental` since Night 1, written from an abstract,
+and it survived every automated check.
+
+## miR-21–PDCD4: unread is not the same as unsupported
+
+17968323 is paywalled. Its row was **left at `Direct experimental` rather than downgraded**,
+and the reasoning is right: the downgrade rule covers methods sections that name no assay, and
+here the methods could not be read at all. `limitations.md` §8 says missing information is
+never recorded as a negative finding, and that applies to our own missing information too.
+
+The row is now marked `class_source = abstract (full text unavailable)`, flagged **unverified**
+on the website, and raised as a warning by `qc.py` on every run. It is the only such row.
+
+## New column: `class_source`
+
+The review made a distinction the schema could not express: whether a class was established
+from a methods section or from an abstract. `Direct experimental` means something different in
+each case, and burying that in prose notes made it invisible to anyone filtering the data.
+
+`class_source` is derived from the review marks in `fulltext_access.csv` and takes three
+values: `full text`, `abstract (full text unavailable)`, `abstract (not yet reviewed)`.
+
+## A defect in the checker, found by using it
+
+`check_fulltext_access.py` hard-coded `reviewed = ""` on every regenerated row, so re-running
+it would have **erased all 31 review marks** from the previous day's work. It was caught before
+any were lost, and the script now carries the column forward from the existing file.
+
+Worth noting what kind of bug this is: the script had been run once, worked, and been committed.
+It only became destructive the second time it was run, against data that did not exist when it
+was written.
+
+## Inaccessible papers
+
+Eight could not be read: 17968323, 18193036, 17898713, 39889913, 24768205, 15766527, 15944709,
+and the MEG3 paper. Their rows keep the class their abstracts support, marked as unverified
+where that class is `Direct experimental`. Library access is the only route left for these.

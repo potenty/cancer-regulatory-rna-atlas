@@ -186,6 +186,16 @@ def main():
         if pm and url and pm not in url:
             add("ERROR", "url-mismatch", f"publication {pm}: URL {url} does not contain its PMID")
 
+    # --- unverified strong claims ---
+    for r in inter + assoc:
+        if (r.get("evidence_class") == "Direct experimental"
+                and not (r.get("class_source", "")).startswith("full text")):
+            rid = r.get("interaction_id") or r.get("association_id", "?")
+            add("WARN", "unverified-direct",
+                f"{rid} ({r.get('rna_name')}-{r.get('target_name','')}) is Direct experimental "
+                f"but its class_source is {r.get('class_source','(missing)')!r}. The strongest "
+                f"class should rest on a methods section, not an abstract.")
+
     # --- cancer vocabulary ---
     miss = unmapped([r.get("cancer_type", "") for r in inter + assoc])
     for m in miss:

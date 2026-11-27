@@ -534,3 +534,19 @@ thead th { white-space: normal; }
 #pub-results th:nth-child(5), #pub-results td:nth-child(5) { width: 8%; }
 #pub-results th:nth-child(6), #pub-results td:nth-child(6) { width: 14%; }
 #pub-results th:nth-child(7), #pub-results td:nth-child(7) { width: 19%; }
+
+/* "unverified" sits beside an evidence badge whose class was read from an
+   abstract rather than a methods section. */
+.unverified {
+  font-size: 0.64rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #8c2a2a;
+  background: #fdecec;
+  border: 1px solid #e5a9a9;
+  border-radius: 2px;
+  padding: 0.1rem 0.3rem;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: help;
+}

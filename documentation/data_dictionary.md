@@ -31,6 +31,7 @@ Four CSV tables in `database/`. All files are UTF-8 with a header row. Empty str
 | `interaction_type` | e.g. `mRNA target repression`, `transcriptional regulation`, `RNA-protein binding`, `miRNA sponging`, `enhancer-promoter activation`. |
 | `regulatory_effect` | `represses`, `activates`, `stabilises`, or empty if undocumented. |
 | `evidence_class` | One of the four classes in `methodology.md`. |
+| `class_source` | How that class was established: `full text`, `abstract (full text unavailable)`, or `abstract (not yet reviewed)`. Derived from the review marks in `quality_control/fulltext_access.csv`. |
 | `experimental_method` | Assay as named by the source. Where the source asserts a relationship without naming an assay, this records that fact. |
 | `supporting_pmid` | PubMed ID. |
 | `original_source` | Database or publication the record was curated from. |
@@ -74,6 +75,7 @@ the website and `verification_report.md` both report.
 | `direction` | `upregulated`, `downregulated`, `deleted`, `amplified`, or empty. |
 | `clinical_association` | e.g. `poor prognosis`, `metastasis`, or empty. |
 | `evidence_class` | As above. |
+| `class_source` | As above. |
 | `cohort_description` | Sample counts as the source reports them. Empty if not stated. |
 | `supporting_pmid` | PubMed ID. |
 | `notes` | Curator notes. |
@@ -114,6 +116,23 @@ a complete record, not a half-finished one.
 | `main_finding` | Curator's paraphrase of the abstract. Not a quotation. |
 | `pubmed_flags` | Erratum, comment, or expression-of-concern notices. Empty if none. |
 | `publication_url` | `https://pubmed.ncbi.nlm.nih.gov/<pmid>/`. |
+
+### `class_source`: evidence about the evidence
+
+An evidence class is only as good as what it was read from. Night 1 classes came from
+PubMed abstracts; the full-text review of November 2026 confirmed, upgraded or downgraded
+most of them. A handful of papers could not be read at all, so their rows still rest on an
+abstract.
+
+That distinction is a column rather than a remark in `notes`, because it changes how much
+weight a row carries. `Direct experimental` backed by a named assay in a methods section is a
+different claim from the same badge inferred from an abstract, and a reader filtering for
+strong evidence needs to see which they have. The website marks the latter **unverified**
+beside the badge, and `qc.py` raises a warning for every such row.
+
+One row currently carries it: miR-21–PDCD4 (17968323), whose paper is paywalled. It was left
+at `Direct experimental` rather than downgraded, because an unread methods section is missing
+information, not evidence that no assay exists — the rule in `limitations.md` §8.
 
 ### Why there are two cancer columns
 

@@ -51,11 +51,22 @@
     return '<span class="clamp" title="' + esc(s) + '">' + esc(s) + "</span>";
   }
 
-  function badge(cls) {
+  /* The badge carries the class; the marker beside it carries how the class was
+     established. A Direct experimental row read only from an abstract is a
+     weaker claim than the same badge backed by a methods section, and the
+     reader should be able to see the difference. */
+  function badge(cls, source) {
     var s = (cls || "").trim();
     if (!s) return '<span class="ev ev-unknown" title="No evidence class recorded">Unclassified</span>';
     var slug = EV_SLUG[s] || "unknown";
-    return '<span class="ev ev-' + slug + '">' + esc(s) + "</span>";
+    var out = '<span class="ev ev-' + slug + '" title="Evidence class: ' + esc(s) + '">' +
+      esc(s) + "</span>";
+    var src = (source || "").trim();
+    if (src && src.indexOf("full text") !== 0) {
+      out += ' <abbr class="unverified" title="Class established from the abstract only — ' +
+        esc(src) + '">unverified</abbr>';
+    }
+    return out;
   }
 
   function haystack(row, fields) {
@@ -405,7 +416,7 @@
         "<td>" + cell(r.cancer_type) + "</td>" +
         "<td>" + cell(r.interaction_type) + "</td>" +
         "<td>" + cell(r.regulatory_effect) + "</td>" +
-        '<td class="ev-cell">' + badge(r.evidence_class) + "</td>" +
+        '<td class="ev-cell">' + badge(r.evidence_class, r.class_source) + "</td>" +
         '<td class="note">' + longCell(r.experimental_method) + "</td>" +
         '<td class="num">' + pubmedLink(r.supporting_pmid) + "</td>" +
         '<td class="note">' + longCell(r.notes) + "</td>" +
@@ -438,7 +449,7 @@
         "<td>" + cell(r.cancer_type) + "</td>" +
         "<td>" + cell(r.direction) + "</td>" +
         "<td>" + cell(r.clinical_association) + "</td>" +
-        '<td class="ev-cell">' + badge(r.evidence_class) + "</td>" +
+        '<td class="ev-cell">' + badge(r.evidence_class, r.class_source) + "</td>" +
         '<td class="note">' + longCell(r.cohort_description) + "</td>" +
         '<td class="num">' + pubmedLink(r.supporting_pmid) + "</td>" +
         "</tr>";

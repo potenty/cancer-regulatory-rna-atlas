@@ -20,6 +20,33 @@ EVIDENCE = {"Direct experimental", "Experimental functional",
             "Computational prediction", "Literature association"}
 
 
+
+def class_sources(root):
+    """Map PMID -> how its evidence class was established.
+
+    An evidence class is only as trustworthy as the source it was read from.
+    Night 1 classes came from abstracts; the full-text review either confirmed,
+    upgraded or downgraded them. Several papers could not be read at all, and
+    their rows still rest on an abstract. That distinction belongs in a column,
+    not in prose, so a reader filtering on Direct experimental can see which
+    rows have actually been checked.
+    """
+    path = os.path.join(root, "quality_control", "fulltext_access.csv")
+    out = {}
+    if not os.path.exists(path):
+        return out
+    with open(path, newline="", encoding="utf-8") as fh:
+        for r in csv.DictReader(fh):
+            mark = (r.get("reviewed") or "").strip().lower()
+            if not mark:
+                out[r["supporting_pmid"]] = "abstract (not yet reviewed)"
+            elif mark.startswith("not accessed"):
+                out[r["supporting_pmid"]] = "abstract (full text unavailable)"
+            else:
+                out[r["supporting_pmid"]] = "full text"
+    return out
+
+
 def load_csv(name):
     path = os.path.join(DB, name)
     if not os.path.exists(path):
@@ -72,6 +99,7 @@ def main():
                     gene_id.setdefault(m.group(1), "NCBIGene:" + m.group(2))
 
     pmids = {p["pmid"] for p in pubs}
+    sources = class_sources(ROOT)
     errors = []
 
     # ---- interactions ----
@@ -105,6 +133,7 @@ def main():
             "evidence_class": r["evidence_class"],
             "experimental_method": r.get("experimental_method", ""),
             "supporting_pmid": r["supporting_pmid"],
+            "class_source": sources.get(r["supporting_pmid"], "abstract (not yet reviewed)"),
             "original_source": "PubMed abstract",
             "notes": r.get("notes", ""),
         })
@@ -132,6 +161,7 @@ def main():
             "evidence_class": r["evidence_class"],
             "cohort_description": r.get("cohort_description", ""),
             "supporting_pmid": r["supporting_pmid"],
+            "class_source": sources.get(r["supporting_pmid"], "abstract (not yet reviewed)"),
             "notes": r.get("notes", ""),
         })
 
