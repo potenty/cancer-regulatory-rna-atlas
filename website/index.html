@@ -34,11 +34,43 @@
 <section class="panel" id="panel-home">
   <h2>About this atlas</h2>
   <p class="lede">
-    Research on regulatory noncoding RNAs in cancer is scattered across databases that each cover
-    one RNA class and each use their own notion of evidence. This atlas organizes published
-    findings under a single evidence framework, so the strength of support for every record is
-    visible and comparable.
+    A method for grading the strength of published evidence behind noncoding RNA&ndash;cancer
+    claims, and a pilot applying it to 131 curated records across four RNA classes.
   </p>
+
+  <div class="notice caution">
+    <p><strong>This is a pilot, not a comprehensive database.</strong> For microRNA&ndash;target
+      interactions, <a href="https://mirtarbase.cuhk.edu.cn/" target="_blank" rel="noopener">miRTarBase</a>
+      holds over 400,000 curated entries with its own validation tiers and is better than this in
+      every way that size matters.</p>
+    <p>What no existing resource does is apply <em>one</em> evidence rubric across miRNA, lncRNA,
+      eRNA and circRNA, so the classes can be compared on the same scale. That is the gap this
+      pilot was built to test &mdash; and the sample here is too small to settle it.</p>
+  </div>
+
+  <h3>The result</h3>
+  <p>Of 57 interaction rows whose class was checked against the paper's methods section,
+    <strong>27 (47%) were supported by a direct binding assay</strong>. The rest reported that
+    perturbing the RNA changed the target, without showing that they bind.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>RNA class</th><th>Verified rows</th><th>Direct evidence</th><th>Share</th></tr></thead>
+      <tbody>
+        <tr><td class="name">miRNA</td><td class="num">24</td><td class="num">13</td><td class="num">54%</td></tr>
+        <tr><td class="name">lncRNA</td><td class="num">18</td><td class="num">10</td><td class="num">56%</td></tr>
+        <tr><td class="name">eRNA</td><td class="num">11</td><td class="num">4</td><td class="num">36%</td></tr>
+        <tr><td class="name">circRNA</td><td class="num">3</td><td class="num">0</td><td class="num">0%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="notice caution">
+    <p><strong>These classes cannot be distinguished at this sample size.</strong> miRNA and
+      lncRNA are effectively identical; eRNA looks lower, but 4 of 11 sits well within chance of
+      the others. Answering the question would need roughly 50&ndash;100 verified rows per class.</p>
+    <p>The honest finding is that the method works and the sample is too small to use it.</p>
+  </div>
 
   <h3>Database contents</h3>
   <div class="stats" id="home-stats"></div>
@@ -76,14 +108,21 @@
       explicit evidence labelling.</p>
   </div>
 
-  <h3>Questions it is built to help answer</h3>
+  <h3>What went wrong, and was caught</h3>
+  <p>Kept on the front page because the corrections are the most informative part of the project.</p>
   <ul class="plain">
-    <li>Which regulatory RNAs are associated with which cancer types?</li>
-    <li>Which genes do they regulate, and by what reported mechanism?</li>
-    <li>Which relationships have direct experimental support, and which rest on prediction or correlation?</li>
-    <li>Which relationships recur across more than one cancer type?</li>
-    <li>Where is the evidence thin — which RNA classes and cancer types are under-covered?</li>
+    <li><strong>Ten candidate PMIDs</strong> belonged to unrelated papers. All were discarded
+      rather than corrected by guesswork; each would have become a fabricated citation.</li>
+    <li><strong>One retracted paper</strong> was caught by PubMed flags and excluded.</li>
+    <li><strong>Two early rows</strong> were classed Direct experimental on authors' wording
+      alone, breaking this project's own rule, then copied as the pattern for later work.</li>
+    <li><strong>let-7a&ndash;HMGA2</strong> was downgraded on full-text review: the binding assay
+      used a let-7b/let-7e mixture, so extending it to let-7a rested on a shared seed sequence.</li>
+    <li><strong>A script bug</strong> would have erased 31 review marks the second time it ran.</li>
   </ul>
+  <p>None were caught by the automated checks, which passed throughout. Every one was found by a
+    person reading output and asking whether a number looked right. Automated checks catch
+    malformed data; they do not catch wrong data.</p>
 </section>
 
 <!-- ======================== RNA EXPLORER ======================== -->
